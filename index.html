@@ -3,1127 +3,689 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craiglands · COMPLETE FINAL · all items restored · perfect scaling</title>
-    <!-- fonts - expanded -->
+    <title>Craiglands · Antler Bar & Lounge · Refined Elegance</title>
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: #3b332e;
-            font-family: 'Times New Roman', serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        * {
+            margin: 0;
             padding: 0;
-            min-height: 100vh;
+            box-sizing: border-box;
         }
-        /* ----- STICKY TOOLBAR (always visible) ----- */
-        .toolbar {
-            background: #ece3d9;
-            width: 100%;
-            max-width: 1600px;
-            padding: 12px 20px;
-            margin: 0 auto 20px auto;
-            border-radius: 50px;
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #1a0f0a;
+            min-height: 100vh;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 8px 16px;
-            border: 1px solid #b99f8c;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 1000;
-            position: sticky;
-            top: 10px;
-        }
-        .tool-group {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: #fffaf2;
-            padding: 5px 12px;
-            border-radius: 40px;
-            border: 1px solid #bfa690;
-            flex-wrap: wrap;
-        }
-        .tool-group label {
-            font-weight: 600;
-            color: #4d3429;
-            font-size: 13px;
-        }
-        .tool-group select, .tool-group input, .tool-group button {
-            padding: 4px 10px;
-            border-radius: 30px;
-            border: 1px solid #ac8b76;
-            background: white;
-            font-family: 'Times New Roman', serif;
-            font-size: 13px;
-            cursor: pointer;
-        }
-        .tool-group input[type="number"] { width: 70px; }
-        .btn {
-            background: #6b4f42;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-weight: bold;
-            font-size: 13px;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            transition: 0.15s;
-            border: 1px solid #9c7b67;
-            white-space: nowrap;
-        }
-        .btn:hover { background: #7d6051; }
-        .btn.secondary { background: #9a8579; }
-        .btn.small { padding: 4px 8px; font-size: 12px; }
-
-        /* ----- MENU CONTAINER ----- */
-        .menu-preview {
-            width: 14cm;
-            max-width: 14cm;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            transition: all 0.2s;
-            background: #F9F3E9;
+            padding: 30px 20px;
             position: relative;
         }
-        /* Table for repeating footer */
-        .menu-table-container {
+        
+        /* elegant background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            border-collapse: collapse;
-            page-break-inside: auto;
+            height: 100%;
+            background: url('https://files.stampede.ai/514e1892-e0be-11ec-996f-0667c77a7ebd/media/3ebabf33-84d1-4a71-ac77-88b241d399cb.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+            filter: blur(2px) sepia(0.4);
+            z-index: -2;
         }
-        .menu-table-container tbody {
-            page-break-inside: auto;
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(180, 148, 122, 0.15) 0%, rgba(26, 15, 10, 0.98) 90%);
+            z-index: -1;
         }
-        .menu-table-container tfoot {
-            display: table-footer-group;
-            page-break-inside: avoid;
+        
+        /* main container */
+        .craiglands {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
         }
-        .menu-table-container tfoot tr td {
-            border-top: 1px solid #aaa;
-            padding: 10px 0 5px;
-            font-size: 9pt;
-            font-style: italic;
-            text-align: center;
-            background: inherit;
-        }
-        .footer-keys {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 2px;
-        }
-        /* Inner content - all font sizes are relative to base */
-        .menu-content {
-            padding: 0.8cm 0.6cm;
-            font-size: 12pt; /* base size, can be changed via JS */
-        }
-        /* Everything inside menu-content scales with em/rem */
-        .menu-content .section-title { font-size: 2.2em; margin: 1.2em 0 0.3em; }
-        .menu-content .subhead { font-size: 1.6em; margin: 1.4em 0 0.5em; }
-        .menu-content .subhead-small { font-size: 1.3em; margin: 1.2em 0 0.4em; }
-        .menu-content .menu-table td { font-size: 1.1em; }
-        .menu-content .desc { font-size: 1em; }
-        .menu-content .burger-desc { font-size: 1em; }
-        .menu-content .dietary { font-size: 0.8em; }
-        .menu-content .hotel-main { font-size: 2.8em; }
-        .menu-content .hotel-sub { font-size: 2.2em; }
-        .menu-content .all-day-badge { font-size: 1.8em; }
-        .menu-content .kids-badge { font-size: 1.9em; }
-        .menu-content .kids-pricing { font-size: 1.4em; }
-        .menu-content .wine-name, .menu-content .hd-name, 
-        .menu-content .soft-name, .menu-content .beer-name,
-        .menu-content .bottle-name { font-size: 1.1em; }
-        .menu-content .wine-price, .menu-content .hd-price,
-        .menu-content .soft-price, .menu-content .beer-details,
-        .menu-content .bottle-price { font-size: 1.1em; }
-        .menu-content .spirits-table td { font-size: 1.1em; }
-        .menu-content .tea-timing { font-size: 1em; }
-        .menu-content .footer { font-size: 0.9em; }
-
-        @media print {
-            body { background: white; padding: 0; }
-            .toolbar { display: none; }
-            /* Cutting guide wrapper – 15cm total width with exact margins */
-            .print-wrapper {
-                width: 15cm;
-                margin: 0 auto;
-                background: transparent;
-                padding: 0;
-                position: relative;
-                border-left: 1px dashed #999;
-                border-right: 1px dashed #999;
-            }
-            /* Inner menu – 13cm wide, positioned with 1.3cm left and 0.7cm right */
-            .menu-preview {
-                width: 13cm;
-                max-width: 13cm;
-                margin: 0 0 0 1.3cm;
-                box-shadow: none;
-                background: #F9F3E9;
-            }
-            .menu-content {
-                padding: 0.5cm 0.3cm;
-            }
-            .page-break { page-break-before: always; }
-            [contenteditable="true"] { outline: none !important; border: none !important; }
-            .menu-table-container tfoot {
-                display: table-footer-group;
-            }
-        }
-
-        /* ----- WORD‑LIKE EDITING ----- */
-        [contenteditable="true"] {
-            outline: 1px dashed transparent;
-            transition: outline 0.15s;
+        
+        /* HOME SCREEN */
+        .home-screen {
             display: block;
-            min-width: 20px;
-            cursor: text;
-            white-space: pre-wrap;
         }
-        [contenteditable="true"]:hover {
-            outline: 1px dashed #b09787;
-            background: rgba(200, 180, 160, 0.05);
+        
+        .home-screen.hidden {
+            display: none;
         }
-        [contenteditable="true"]:focus {
-            outline: 2px solid #8b5a4b;
-            background: #fff8f2;
-        }
-        td[contenteditable="true"] {
-            display: table-cell;
-            white-space: normal;
-        }
-        p, h1, h2, h3, h4, div, span, li, td, th, .desc, .burger-desc, .section-title, .subhead, .subhead-small, .kids-pricing, .footer, .footer-contact, .tea-panel div, .tea-panel li, .hotel-main, .hotel-sub, .all-day-badge, .kids-badge, .wine-name, .wine-price, .hd-name, .hd-price, .soft-name, .soft-price, .beer-name, .beer-details, .bottle-name, .bottle-price {
-            cursor: text;
-            color: inherit;
-        }
-        .price-cell, .wine-price, .hd-price, .soft-price, .beer-details, .bottle-price {
-            white-space: nowrap !important;
-            overflow: visible !important;
-        }
-
-        .section-block.selected, .menu-item-block.selected {
-            background: rgba(139, 90, 75, 0.12);
-            border-left: 3px solid #8b5a4b;
-            padding-left: 8px;
-        }
-
-        .menu-item-block, .section-block, .tea-panel, .kids-panel, .sandwich-panel {
-            page-break-inside: avoid;
-        }
-
-        /* ----- THEME STYLES (5 original + 3 new) ----- */
-        .arch-brasserie { background: #F9F3E9; color: #1E1B18; font-family: 'EB Garamond', serif; }
-        .arch-minimal { background: #FFFFFF; color: #2A2A2A; font-family: 'Inter', sans-serif; }
-        .arch-tavern { background: #F0E6D8; color: #2D2A24; font-family: 'Courier Prime', monospace; }
-        .arch-deco { background: #F5F0E8; color: #1E2B3A; font-family: 'Playfair Display', serif; }
-        .arch-inn { background: #F7F1E5; color: #3A322A; font-family: 'Cormorant Garamond', serif; }
-        /* 3 NEW THEMES */
-        .arch-coastal { background: #E8F0F0; color: #1E3F4A; font-family: 'Montserrat', sans-serif; }
-        .arch-heritage { background: #2C1A1A; color: #F5E8D9; font-family: 'Lora', serif; }
-        .arch-botanical { background: #E8F0E8; color: #1F4A3A; font-family: 'Source Serif Pro', serif; }
-
-        .section-title { font-weight: 600; text-align: center; text-transform: uppercase; letter-spacing: 4px; }
-        .subhead { font-weight: 600; font-style: italic; }
-        .subhead-small { font-weight: 600; font-style: italic; }
-        .menu-table { width: 100%; border-collapse: collapse; margin: 0; }
-        .menu-table td { padding: 2px 0; vertical-align: baseline; border: none; }
-        .item-name-cell { width: 80%; font-weight: 600; padding-right: 4px; }
-        .price-cell { width: 20%; text-align: right; font-style: italic; font-weight: 500; }
-        .desc { margin-left: 16px; font-style: italic; margin-bottom: 6px; }
-        .burger-desc { margin-left: 16px; font-style: italic; margin-bottom: 6px; }
-        .burger-desc::before { content: "— "; }
-        .dietary { font-variant: small-caps; margin-left: 2px; white-space: nowrap; display: inline-block; }
-        .double-rule { width: 100%; margin: 16px 0 8px; }
-        .double-rule .thick { border-top: 2px solid #8B5A4B; height: 2px; margin-bottom: 2px; }
-        .double-rule .thin { border-top: 1px solid #8B5A4B; height: 1px; }
-        .all-day-badge { padding: 8px 0 8px 16px; margin: 16px 0 20px; font-weight: 600; background: #EDE7E0; border-left: 6px solid #8B5A4B; }
-        .kids-badge { border-left: 6px solid #8A7A72; padding: 8px 0 8px 16px; margin: 32px 0 16px; font-weight: 600; background: #EDE7E0; }
-
-        .tea-panel, .sandwich-panel, .promo-panel {
-            border: 1px solid #8B5A4B;
-            padding: 20px;
-            margin: 20px 0;
+        
+        /* header - more refined */
+        .refined-header {
             text-align: center;
-            background: #FFF9F0;
-            page-break-inside: avoid;
+            margin-bottom: 40px;
         }
-        .tea-timing { font-style: italic; margin-top: 4px; opacity: 0.8; }
-
-        .section-break { display: flex; align-items: center; gap: 12px; margin: 30px 0 16px; }
-        .sline { flex: 1; height: 1px; background: currentColor; opacity: 0.2; }
-        .hot-drinks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 16px; }
-        .hd-cell { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 0.5px dotted; }
-        .wine-row { display: flex; align-items: baseline; padding: 4px 0; border-bottom: 0.5px dotted; }
-        .wine-name { flex: 1; }
-        .wine-price { text-align: right; font-style: italic; white-space: nowrap; }
-        .beer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
-        .beer-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 0.5px dotted; }
-        .beer-details { text-align: right; font-style: italic; white-space: nowrap; }
-        .bottles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
-        .bottle-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 0.5px dotted; }
-        .bottle-price { text-align: right; font-style: italic; white-space: nowrap; }
-        .soft-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 20px; }
-        .soft-cell { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 0.5px dotted; }
-        .spirits-table { width: 100%; border-collapse: collapse; }
-        .spirits-table td { padding: 4px 8px 4px 0; vertical-align: top; }
-        .sn { width: 35%; }
-        .sp { width: 15%; text-align: right; font-style: italic; }
-        .page-break { page-break-before: always; margin-top: 0.3cm; }
-        .bottle-icon, .glass-icon, .beer-icon, .cocktail-icon { font-size: 0.9em; margin-right: 3px; }
-        .can-icon { font-size: 0.9em; margin-right: 3px; }
+        
+        .refined-header .hotel-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            font-weight: 800;
+            color: #e8d9c4;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 5px;
+        }
+        
+        .refined-header .hotel-sub {
+            font-size: 1.6rem;
+            color: #c9ad93;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            background: rgba(26, 15, 10, 0.5);
+            display: inline-block;
+            padding: 10px 35px;
+            border-radius: 40px;
+            border: 1px solid #b4947a;
+            backdrop-filter: blur(4px);
+        }
+        
+        /* SMALLER TILES - perfectly proportioned */
+        .tile-collection {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0 40px;
+        }
+        
+        .refined-tile {
+            background: rgba(250, 242, 232, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1px solid #c9ad93;
+            border-radius: 20px;
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .refined-tile:hover {
+            transform: translateY(-5px);
+            background: #faf2e8;
+            border-color: #8B5A4B;
+            box-shadow: 0 15px 25px rgba(139, 90, 75, 0.25);
+        }
+        
+        .refined-tile i {
+            font-size: 2.5rem;
+            color: #8B5A4B;
+            margin-bottom: 12px;
+        }
+        
+        .refined-tile .tile-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #3a2a20;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .refined-tile .tile-desc {
+            font-size: 1.2rem;  /* LARGER sub text */
+            color: #6b4f3f;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        /* deals section - updated with correct times */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .offer-card {
+            background: rgba(45, 30, 22, 0.9);
+            backdrop-filter: blur(5px);
+            border: 1px solid #c9ad93;
+            border-radius: 24px;
+            padding: 25px;
+            color: #f0e2d2;
+        }
+        
+        .offer-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #e6c9a8;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #b4947a;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .offer-card h3 i {
+            font-size: 1.8rem;
+        }
+        
+        .hh-offers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .hh-offer {
+            background: rgba(180, 148, 122, 0.15);
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .hh-offer .drink-type {
+            font-size: 1.1rem;
+            color: #d4bc9f;
+        }
+        
+        .hh-offer .offer-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e6c9a8;
+        }
+        
+        .dinner-deal {
+            background: rgba(180, 148, 122, 0.15);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .dinner-deal .big-price {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #e6c9a8;
+            line-height: 1;
+        }
+        
+        .dinner-deal .deal-time {
+            font-size: 1.1rem;
+            color: #d4bc9f;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* MENU PAGES - Traditional layout */
+        .menu-page {
+            display: none;
+            background: #fcf7f0;
+            border-radius: 40px;
+            padding: 50px;
+            border: 1px solid #c9aa8b;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .menu-page.active {
+            display: block;
+        }
+        
+        .back-button {
+            background: #8B5A4B;
+            color: #fcf7f0;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            border: 1px solid #b58b76;
+        }
+        
+        .back-button:hover {
+            background: #6f4537;
+            transform: translateX(-5px);
+        }
+        
+        .menu-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .menu-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #4a2a1c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #dbbc9f;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        
+        /* TRADITIONAL MENU STYLES */
+        .menu-section {
+            margin-bottom: 40px;
+        }
+        
+        .menu-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #8B5A4B;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #d4b9ac;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 5px 0;
+            border-bottom: 1px dotted #d0bbb0;
+        }
+        
+        .menu-item-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c1e18;
+        }
+        
+        .menu-item-price {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #8B5A4B;
+            font-weight: 500;
+        }
+        
+        .menu-item-desc {
+            font-size: 1.05rem;
+            color: #5d4237;
+            font-style: italic;
+            margin-left: 18px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .dietary-tag {
+            font-size: 0.85rem;
+            font-variant: small-caps;
+            background: #f2eae5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 0.5px solid #d6bfb5;
+            margin-left: 4px;
+            color: #6f5345;
+        }
+        
+        .sub-head {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #6b4a3a;
+            margin: 25px 0 10px;
+        }
+        
+        .sub-head-small {
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #6b4a3a;
+            margin: 20px 0 8px;
+        }
+        
+        .flavour-row {
+            display: flex;
+            gap: 25px;
+            margin-left: 18px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: #4e3d35;
+            flex-wrap: wrap;
+        }
+        
+        .price-note {
+            text-align: right;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #8B5A4B;
+            margin-bottom: 20px;
+        }
+        
+        .special-panel {
+            border: 1px solid #8B5A4B;
+            background: #fff9f3;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .special-panel .big-text {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #4a2a1c;
+        }
+        
+        .kids-panel {
+            background: #EDE7E0;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+        
+        .kids-price-badge {
+            font-size: 1.7rem;
+            font-style: italic;
+            color: #3a2b24;
+            margin-bottom: 20px;
+        }
+        
+        .footer-keys {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #d4b9ac;
+            text-align: center;
+            font-size: 1rem;
+            color: #5d4237;
+        }
+        
+        @media (max-width: 900px) {
+            .tile-collection { grid-template-columns: repeat(2, 1fr); }
+            .menu-header h1 { font-size: 2.8rem; }
+        }
+        
+        @media (max-width: 600px) {
+            .tile-collection { grid-template-columns: 1fr; }
+            .offers-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-<!-- ========== STICKY TOOLBAR ========== -->
-<div class="toolbar" id="mainToolbar">
-    <div class="tool-group">
-        <label>Theme:</label>
-        <select id="archSelector">
-            <option value="arch-brasserie" selected>Classic Brasserie</option>
-            <option value="arch-minimal">Modern Minimal</option>
-            <option value="arch-tavern">Rustic Tavern</option>
-            <option value="arch-deco">Art Deco</option>
-            <option value="arch-inn">Country Inn</option>
-            <option value="arch-coastal">Coastal Haven</option>
-            <option value="arch-heritage">Heritage Club</option>
-            <option value="arch-botanical">Botanical Garden</option>
-        </select>
-    </div>
-    <div class="tool-group">
-        <label>Font:</label>
-        <select id="fontSelector">
-            <option value="'EB Garamond', serif">Garamond</option>
-            <option value="'Inter', sans-serif">Inter</option>
-            <option value="'Courier Prime', monospace">Courier</option>
-            <option value="'Playfair Display', serif">Playfair</option>
-            <option value="'Cormorant Garamond', serif">Cormorant</option>
-            <option value="'Times New Roman', serif">Times</option>
-            <option value="'Lora', serif">Lora</option>
-            <option value="'Montserrat', sans-serif">Montserrat</option>
-            <option value="'Source Serif Pro', serif">Source Serif</option>
-        </select>
-    </div>
-    <div class="tool-group">
-        <label>Base size (pt):</label>
-        <input type="number" id="baseFontSize" min="8" max="20" step="0.5" value="12" style="width:70px;">
-    </div>
-    <div class="tool-group">
-        <label>Line spacing:</label>
-        <input type="number" id="lineSpacing" min="1.0" max="2.2" step="0.1" value="1.4" style="width:70px;">
-    </div>
-    <div class="tool-group">
-        <button class="btn small" id="addSectionBtn"><i class="fas fa-plus"></i> Section</button>
-        <button class="btn small" id="addDishBtn"><i class="fas fa-utensils"></i> Dish (end)</button>
-        <button class="btn small" id="insertAboveBtn"><i class="fas fa-arrow-up"></i> Insert Above</button>
-        <button class="btn small" id="insertBelowBtn"><i class="fas fa-arrow-down"></i> Insert Below</button>
-    </div>
-    <div class="tool-group">
-        <button class="btn small secondary" id="deleteBtn"><i class="fas fa-trash"></i> Delete</button>
-        <button class="btn small secondary" id="duplicateBtn"><i class="fas fa-copy"></i> Duplicate</button>
-    </div>
-    <div class="tool-group">
-        <button class="btn small" id="moveUpBtn"><i class="fas fa-arrow-up"></i> Up</button>
-        <button class="btn small" id="moveDownBtn"><i class="fas fa-arrow-down"></i> Down</button>
-    </div>
-    <div class="tool-group">
-        <label>Price ±</label>
-        <input type="number" id="priceAdjust" value="0.50" step="0.10" style="width:60px;">
-        <button class="btn small" id="increasePriceBtn">+£</button>
-        <button class="btn small" id="decreasePriceBtn">-£</button>
-    </div>
-    <div class="tool-group">
-        <label>Tags:</label>
-        <button class="btn small dietary-quick" data-tag="V">V</button>
-        <button class="btn small dietary-quick" data-tag="VE">VE</button>
-        <button class="btn small dietary-quick" data-tag="GF">GF</button>
-        <button class="btn small dietary-quick" data-tag="GFA">GFA</button>
-    </div>
-    <div class="tool-group">
-        <button class="btn" id="printBtn"><i class="fas fa-print"></i> Print</button>
-        <button class="btn secondary" id="saveBtn"><i class="fas fa-save"></i> Save HTML</button>
-    </div>
-    <span style="font-size:12px; color:#4d3429;">Click any text to edit · Enter = new line</span>
-</div>
-
-<!-- ========== COMPLETE MENU IN A TABLE FOR REPEATING FOOTER ========== -->
-<div class="print-wrapper">
-<div class="menu-preview arch-brasserie" id="menuPreview" style="font-family:'EB Garamond', serif;">
-<table class="menu-table-container" id="menuTable" style="line-height:1.4;">
-    <!-- Table body contains all menu content -->
-    <tbody>
-        <tr><td>
-            <div class="menu-content" style="font-size:12pt;" id="menuContent">
-                <!-- HEADER -->
-                <div class="hotel-main" style="font-size:2.8em; font-weight:700; letter-spacing:4px;" contenteditable="true">BRASSERIE</div>
-                <div class="hotel-sub" style="font-size:2.2em; letter-spacing:6px;" contenteditable="true">ANTLER BAR & LOUNGE</div>
-                <div style="font-size:0.9em; letter-spacing:2px;" contenteditable="true">Cowpasture Road, Ilkley · LS29 8RQ</div>
-                <div class="double-rule"><div class="thick"></div><div class="thin"></div></div>
-                <div class="all-day-badge" style="font-size:1.8em;" contenteditable="true">ALL DAY · 12.00 – 20.00 · Tue–Sat</div>
-
-                <!-- ========== FULL FOOD MENU ========== -->
-                <!-- STARTERS -->
-                <div class="section-block" data-section="starters">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">STARTERS</div>
-                    
-                    <div class="menu-item-block" data-item="soup">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Soup of the Moment</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£6.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Crusty bread roll</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="bao">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Hoisin Pulled Pork Bao Buns</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;" contenteditable="true">Shredded pak-choi, spring onion</div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="asparagus">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Asparagus & Parma Ham Benedict</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;" contenteditable="true">Two poached eggs, hollandaise</div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="mushrooms">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Creamed Wild Mushrooms</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Garlic cream, charred sourdough, chives, truffle oil</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="prawns">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Chilli King Prawns (5)</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£10.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Pan-fried king prawns, chilli tomato sauce, toasted ciabatta</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="halloumi">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Hot Honey Halloumi</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Grilled halloumi, hot honey glaze, mango salsa, pea shoots</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-                </div>
-
-                <!-- MAINS -->
-                <div class="section-block" data-section="mains">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">MAINS</div>
-                    
-                    <div class="menu-item-block" data-item="fish">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Fish & Chips</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£16.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Battered haddock, chunky chips, crushed minted peas</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="pie">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Homemade Pie of the Day</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£16.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;" contenteditable="true">Creamy mash, tenderstem broccoli, honey roast carrots</div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="steak">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Sirloin Steak</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£30.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Chunky chips, grilled tomato, mushrooms, onion rings, Caesar salad</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="tikka">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Chicken Tikka</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£18.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;" contenteditable="true">Tikka marinated chicken, creamy medium curry, yoghurt, garlic naan, yellow rice</div>
-                    </div>
-
-                    <!-- BURGERS -->
-                    <div class="subhead" style="font-size:1.6em; margin:1.4em 0 0.5em;" contenteditable="true">Burgers</div>
-                    <div class="desc" style="font-size:1em; margin-left:16px;" contenteditable="true">Aberdeen Angus, brioche bun, baby gem, tomato, pickles, fries & coleslaw</div>
-                    
-                    <div class="menu-item-block" data-item="craiglands">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">The Craiglands Burger</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£16.95</td></tr></table>
-                        <div class="burger-desc" style="font-size:1em;"><span contenteditable="true">Bacon, cheese, fried onion</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="bbq">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">BBQ Burger</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£16.95</td></tr></table>
-                        <div class="burger-desc" style="font-size:1em;"><span contenteditable="true">Cheese, BBQ sauce</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="classic">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Classic Beef Burger</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£15.95</td></tr></table>
-                        <div class="burger-desc" style="font-size:1em;"><span contenteditable="true">Plain & perfect</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="hunters">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Hunters Chicken Burger</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£15.95</td></tr></table>
-                        <div class="burger-desc" style="font-size:1em;"><span contenteditable="true">Char-grilled chicken, bacon, BBQ sauce, cheese</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="veggie">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Loaded Veggie Burger</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£14.95</td></tr></table>
-                        <div class="burger-desc" style="font-size:1em;"><span contenteditable="true">Bell pepper, confit tomato, fried onion, mushroom, grilled halloumi, salsa</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-
-                    <!-- TENDERS -->
-                    <div class="subhead-small" style="font-size:1.3em; margin:1.2em 0 0.4em;" contenteditable="true">Buttermilk Chicken Tenders (5)</div>
-                    <div class="desc" style="font-size:1em; margin-left:16px;" contenteditable="true">Fries, coleslaw, charred corn <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                    <div class="menu-item-block" data-item="tenders">
-                        <table style="width:100%; margin-left:16px;"><tr><td style="font-size:1.1em;" contenteditable="true">Garlic Parmesan</td><td style="font-size:1.1em;" contenteditable="true">BBQ</td><td style="font-size:1.1em;" contenteditable="true">Honey Sriracha</td></tr>
-                        <tr><td style="font-size:1.1em;" contenteditable="true">Cajun</td><td style="font-size:1.1em;" contenteditable="true">Plain</td><td></td></tr></table>
-                        <div class="tender-price-block" style="text-align:right; font-style:italic; font-size:1em;" contenteditable="true">all £13.95</div>
-                    </div>
-
-                    <!-- WINGS -->
-                    <div class="subhead-small" style="font-size:1.3em; margin:1.2em 0 0.4em;" contenteditable="true">Crispy Chicken Wings (6)</div>
-                    <div class="desc" style="font-size:1em; margin-left:16px;" contenteditable="true">Fries, coleslaw, baby corn</div>
-                    <div class="menu-item-block" data-item="wings">
-                        <table style="width:100%; margin-left:16px;"><tr><td style="font-size:1.1em;" contenteditable="true">Garlic Parmesan</td><td style="font-size:1.1em;" contenteditable="true">BBQ</td><td style="font-size:1.1em;" contenteditable="true">Honey Sriracha</td></tr>
-                        <tr><td style="font-size:1.1em;" contenteditable="true">Salted</td><td style="font-size:1.1em;" contenteditable="true">Cajun</td><td style="font-size:1.1em;" contenteditable="true">Plain</td></tr></table>
-                        <div class="tender-price-block" style="text-align:right; font-style:italic; font-size:1em;" contenteditable="true">all £12.95</div>
-                    </div>
-
-                    <!-- VEGETARIAN -->
-                    <div class="subhead" style="font-size:1.6em; margin:1.4em 0 0.5em;" contenteditable="true">Vegetarian & Vegan</div>
-                    
-                    <div class="menu-item-block" data-item="curry">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Butternut Squash & Sweet Potato Curry</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£14.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Rice, naan</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="risotto">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Wild Mushroom Risotto</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£15.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Parmesan, truffle oil</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="tart">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Goats Cheese & Beetroot Tart</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£14.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Deep filled tart, chunky chips, Caesar salad</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-
-                    <!-- 3-COURSE MENU PROMO (added here) -->
-                    <div class="promo-panel" style="border:1px solid #8B5A4B; padding:15px; margin:25px 0 15px; background:#FFF9F0; text-align:center;">
-                        <div style="font-size:1.3em; font-weight:600;" contenteditable="true">🍽️ THREE COURSES FROM OUR MENU</div>
-                        <div style="font-size:2em; font-weight:700; color:#6b4f42; margin:5px 0;" contenteditable="true">£33 PER PERSON</div>
-                        <div style="font-size:1em; font-style:italic;" contenteditable="true">Choose any starter, main & dessert</div>
-                    </div>
-                </div>
-
-                <!-- SIDES -->
-                <div class="section-block" data-section="sides">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">SIDES</div>
-                    
-                    <div class="menu-item-block" data-item="onion">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Hand Battered Onion Rings</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="aspen">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Aspen Fries</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£6.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span contenteditable="true">Fries, parmesan, chives, truffle oil</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="fries">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Fries</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="corn">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Corn on the Cob</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="caesar">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Caesar Salad</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£6.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                    </div>
-                    
-                    <div class="menu-item-block" data-item="veg">
-                        <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Butter Glazed Market Veg</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£6.95</td></tr></table>
-                        <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                    </div>
-                </div>
-
-                <!-- DESSERTS -->
-                <div class="section-block" data-section="desserts">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">DESSERTS</div>
-                    <div class="tea-panel" style="border:1px solid #8B5A4B; padding:20px;">
-                        <div style="font-size:1.6em; font-weight:600;" contenteditable="true">An ever-changing board of seasonal delights</div>
-                        <div style="font-size:1.1em; font-style:italic;" contenteditable="true">Friday & Saturday evening specials — please ask your server</div>
-                    </div>
-                </div>
-
-                <!-- SANDWICHES -->
-                <div class="section-block" data-section="sandwiches">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">SANDWICHES</div>
-                    <div class="sandwich-panel" style="border:1px solid #8B5A4B; padding:20px;">
-                        <div class="desc" style="font-size:1em; margin-bottom:12px;" contenteditable="true">All sandwiches served on white or brown bread with house salad and crisps</div>
-                        
-                        <div class="menu-item-block" data-item="ham">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Ham, Tomato and English mustard</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="tuna">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Tuna, Red Onion and Mayonnaise</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£8.95</td></tr></table>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="cheese">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Cheddar Cheese and Savoury</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£7.95</td></tr></table>
-                            <div class="desc" style="font-size:1em; margin-left:16px;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="egg">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Egg and Cress</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£7.95</td></tr></table>
-                            <div class="desc" style="font-size:1em; margin-left:16px;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KIDS MENU -->
-                <div class="page-break"></div>
-                <div class="section-block" data-section="kids">
-                    <div class="kids-badge" style="font-size:1.9em; padding:8px 0 8px 16px; margin:32px 0 16px; background:#EDE7E0; border-left:6px solid #8A7A72;" contenteditable="true">KIDS' MENU · 12.00 – 20.00</div>
-                    <div class="kids-panel" style="background:#EDE7E0; padding:16px;">
-                        <div class="kids-pricing" style="font-size:1.4em; font-style:italic; margin-bottom:8px;" contenteditable="true">2 courses £10.95 · 3 courses £12.95</div>
-                        
-                        <div class="subhead-small" style="font-size:1.3em; margin:1.2em 0 0.4em;" contenteditable="true">Starters</div>
-                        
-                        <div class="menu-item-block" data-item="kids-soup">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Tomato Soup</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span contenteditable="true">Sliced white bread</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span><span class="dietary" style="font-size:0.8em;" contenteditable="true">[VE]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-garlic">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Cheesy Garlic Bread</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-mozz">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Mozzarella Dippers</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span contenteditable="true">Tomato salsa</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                        </div>
-                        
-                        <div class="subhead-small" style="font-size:1.3em; margin:1.2em 0 0.4em;" contenteditable="true">Mains</div>
-                        
-                        <div class="menu-item-block" data-item="kids-tenders">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Chicken Tenders, Fries & Beans</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-burger">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Burger, Fries & Beans</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span contenteditable="true">Add cheese £1.25</span> <span class="dietary" style="font-size:0.8em;" contenteditable="true">[GFA]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-pizza">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Ciabatta Pizza Bread, Fries & Beans</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[V]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-fish">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Mini Fish Bites, Fries & Mushy Peas</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                        </div>
-                        
-                        <div class="subhead-small" style="font-size:1.3em; margin:1.2em 0 0.4em;" contenteditable="true">Desserts</div>
-                        
-                        <div class="menu-item-block" data-item="kids-ice">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Ice Cream</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-brownie">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Mini Choc Brownie & Chocolate Sauce</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                            <div class="desc" style="font-size:1em;"><span class="dietary" style="font-size:0.8em;" contenteditable="true">[GF]</span></div>
-                        </div>
-                        
-                        <div class="menu-item-block" data-item="kids-donut">
-                            <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">Donut Fondue</td><td class="price-cell" style="font-size:1.1em; font-style:italic;" contenteditable="true">included</td></tr></table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TEAS -->
-                <div class="page-break"></div>
-                <div class="section-block" data-section="teas">
-                    <div class="tea-panel" style="border:1px solid #8B5A4B; padding:20px;">
-                        <div class="section-title" style="font-size:2.2em;" contenteditable="true">AFTERNOON TEA</div>
-                        <div class="tea-timing" style="font-size:1em; font-style:italic;" contenteditable="true">Mon–Sun 12.00 – 17.00</div>
-                        <div style="font-size:1.6em;" contenteditable="true">Traditional Afternoon Tea</div>
-                        <div style="font-size:1.4em; font-style:italic;" contenteditable="true">£24.95 per person</div>
-                        <div style="font-size:1.1em;" contenteditable="true">A selection of finger sandwiches, warm scones with clotted cream and strawberry jam, and an assortment of delicate patisserie. Served with your choice of tea.</div>
-                    </div>
-                    
-                    <div class="tea-panel" style="border:1px solid #8B5A4B; padding:20px; margin-top:20px;">
-                        <div class="section-title" style="font-size:2.2em;" contenteditable="true">CREAM TEA</div>
-                        <div class="tea-timing" style="font-size:1em; font-style:italic;" contenteditable="true">Mon–Sun 12.00 – 17.00</div>
-                        <div style="font-size:1.6em;" contenteditable="true">£7.95 Per Person</div>
-                        <div style="font-weight:600; font-size:1.2em; margin-top:12px;" contenteditable="true">Includes:</div>
-                        <ul style="list-style:none; font-size:1.1em;">
-                            <li contenteditable="true">• Fruit scone with clotted cream, strawberry jam</li>
-                            <li contenteditable="true">• Tea or coffee</li>
-                        </ul>
-                        <div style="font-style:italic; font-size:1em;" contenteditable="true">DF and GF options available</div>
-                    </div>
-                </div>
-
-                <!-- ========== DRINKS SECTION ========== -->
-                <div class="page-break"></div>
-                <div class="section-block" data-section="drinks">
-                    <div class="section-title" style="font-size:2.2em;" contenteditable="true">DRINKS</div>
-
-                    <!-- HOT DRINKS - 2 COLUMN -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Hot Drinks</span><div class="sline"></div></div>
-                    <div class="hot-drinks-grid">
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Tea</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.10</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Americano</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.20</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Espresso</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.20</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Double Espresso</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.50</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Cappuccino</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.50</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Latte</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.50</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Hot Chocolate</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.50</span></div>
-                        <div class="hd-cell"><span style="font-size:1.1em;" contenteditable="true">Herbal / Fruit Tea</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.50</span></div>
-                    </div>
-
-                    <!-- SPARKLING & CHAMPAGNE (with icons) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Sparkling & Champagne</span><div class="sline"></div></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Le Alante Prosecco Extra Dry</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£30.00 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Galanti Spumante Bianco</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£28.50 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Galanti Prosecco Extra Dry</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£35.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 125ml £7.50</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Louis Dornier Brut NV</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£51.00 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Laurent-Perrier Brut LP</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£70.00 (750ml)</span></div>
-
-                    <!-- WHITE WINE (with icons) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">White Wine</span><div class="sline"></div></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Borsari Inzolia, Terre Siciliane, Italy</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£25.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £8.50 · 175ml £6.75</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Pinot Grigio di Pavia, Marchesini, Italy</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£28.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £8.95 · 175ml £7.00</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> The Paddock Chardonnay, Australia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£27.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £8.95 · 175ml £7.00</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Short Mile Bay Sauvignon Blanc, Australia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£28.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £9.50 · 175ml £7.00</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Kleine Zalze Bush Vines Chenin Blanc, South Africa</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£29.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £9.75 · 175ml £7.50</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Waipara Hills Sauvignon Blanc, Marlborough, New Zealand</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£36.00 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Petit Chablis Les Sermets, Vignerons de Chablis, France</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£38.00 (750ml)</span></div>
-
-                    <!-- ROSÉ WINE (with icons) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Rosé Wine</span><div class="sline"></div></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Borsari Merlot Rosé, Italia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£25.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £8.50 · 175ml £6.75</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Rugged Ridge Zinfandel, California, USA</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£27.00 (750ml)</span></div>
-
-                    <!-- RED WINE (with icons) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Red Wine</span><div class="sline"></div></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Borsari Cabernet Sauvignon, Italia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£25.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £8.50 · 175ml £6.75</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Granfort Cabernet Sauvignon, Pays d'Oc, France</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£27.50 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £9.50 · 175ml £7.50</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Berri Estates Merlot, Australia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£30.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £10.50 · 175ml £8.25</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Marques de Morano Rioja Joven Tinto, Spain</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£30.00 (750ml) · <i class="fas fa-wine-glass-alt glass-icon"></i> 250ml £10.50 · 175ml £8.25</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Rare Vineyards Pinot Noir, Vin de France, France</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£32.50 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Portillo Malbec, Uco Valley, Mendoza, Argentina</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£35.00 (750ml)</span></div>
-                    <div class="wine-row"><span class="wine-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-wine-bottle bottle-icon"></i> Red Knot Shiraz McLaren Vale, Australia</span><span class="wine-price" style="font-size:1.1em;" contenteditable="true">£37.50 (750ml)</span></div>
-
-                    <!-- BEER & CIDER (Draught) - with beer icon -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Beer & Cider (Draught)</span><div class="sline"></div></div>
-                    <p class="tap-note" style="text-align:right; font-size:0.9em;" contenteditable="true">Pint · ABV% · ½ pint</p>
-                    <div class="beer-grid">
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Heineken Extra Cold</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£6.50 5% / ½ £3.50</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Moretti</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£7.50 4.6% / ½ £4.10</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Neck Oil</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£7.50 5% / ½ £4.10</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Fosters</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£5.60 4% / ½ £3.00</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">John Smiths</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£5.60 3.6% / ½ £3.00</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Strongbow</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£5.90 4.5%</span></div>
-                        <div class="beer-row"><span class="beer-name" style="font-size:1.1em;" contenteditable="true">Strongbow Dark Fruit</span><span class="beer-details" style="font-size:1.1em;" contenteditable="true">£6.50 4% / ½ £3.50</span></div>
-                    </div>
-
-                    <!-- BOTTLES & CANS - with beer icon -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Bottles & Cans</span><div class="sline"></div></div>
-                    <div class="bottles-grid">
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Peroni</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£5.35 · 5%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Moretti</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£4.70 · 4.6%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Mary Jane</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£5.50 · 3.8%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Ilkley Blonde</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£5.50 · 4%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Bulmer's Original</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£5.30 · 4.5%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-can can-icon"></i> Guinness Surger Cans</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£5.40 · 4.1%</span></div>
-                        <div class="bottle-row"><span class="bottle-name" style="font-size:1.1em;" contenteditable="true"><i class="fas fa-beer beer-icon"></i> Becks Blue</span><span class="bottle-price" style="font-size:1.1em;" contenteditable="true">£4.10 · 0.05%</span></div>
-                    </div>
-
-                    <!-- SOFT DRINKS - no icons (clean) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Soft Drinks</span><div class="sline"></div></div>
-                    <div class="soft-grid">
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Appetiser</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£3.10</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Fruit Juice</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.50</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">J2O</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£3.25</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Mixer 200ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.20</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Energy Drink</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£3.00</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Fruit Shoot</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.00</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Still Water 330ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.10</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Sparkling Water 330ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.10</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Still Water 750ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.75</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Sparkling Water 750ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.75</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Pint Coke</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.25</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Pint Diet Coke</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.25</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Pint Lemonade</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£4.25</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">½ Pint Coke</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.50</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">½ Pint Diet Coke</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.50</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">½ Pint Lemonade</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£2.50</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Dash</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£0.80</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Coke 330ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£3.25</span></div>
-                        <div class="soft-cell"><span style="font-size:1.1em;" contenteditable="true">Diet Coke 330ml</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£3.25</span></div>
-                    </div>
-
-                    <!-- SPIRITS & LIQUEURS - no icons (clean) -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true">Spirits & Liqueurs</span><div class="sline"></div></div>
-                    <table class="spirits-table">
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Tanqueray</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.00</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Bombay</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Gordon's Gin</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.65</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Gordon's Pink</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.90</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Gordon's Orange</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.90</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Gordon's Passionfruit</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.00</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Lamb's Navy</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Sailor Jerry</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.95</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Malibu</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Bacardi</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.65</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Jack Daniels</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.95</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Southern Comfort</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Jameson's</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.95</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Famous Grouse</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.50</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Glenfiddich</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£6.00</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Monkey Shoulder</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.90</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Macallan</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£7.10</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Absolut Vodka</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Smirnoff Red</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Courvoisier VS</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.60</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Hennessy VS</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£6.60</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Amaretto</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.80</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Baileys</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.80</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Tia Maria</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.60</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Jägermeister</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Pernod</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Cointreau</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.10</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Grand Marnier</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£6.95</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Drambuie</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.30</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Tequila</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£5.05</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Sambuca</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.45</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Sours</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.00</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Campari</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.85</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Martini</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Cockburn's Port</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td><td class="sn" style="font-size:1.1em;" contenteditable="true">Sherry</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.55</td></tr>
-                        <tr><td class="sn" style="font-size:1.1em;" contenteditable="true">Pimm's No.1</td><td class="sp" style="font-size:1.1em;" contenteditable="true">£4.75</td><td class="sn" style="font-size:1.1em;" contenteditable="true"></td><td class="sp" style="font-size:1.1em;" contenteditable="true"></td></tr>
-                    </table>
-
-                    <!-- COCKTAILS - with cocktail icon -->
-                    <div class="section-break"><div class="sline"></div><span style="font-size:1.4em;" contenteditable="true"><i class="fas fa-cocktail cocktail-icon"></i> Cocktails</span><div class="sline"></div></div>
-                    <div class="cocktail-grid" style="display:grid; grid-template-columns:1fr 1fr; gap: 6px 20px;">
-                        <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:0.5px dotted;"><span style="font-size:1.1em;" contenteditable="true"><i class="fas fa-cocktail cocktail-icon"></i> Espresso Martini</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</span></div>
-                        <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:0.5px dotted;"><span style="font-size:1.1em;" contenteditable="true"><i class="fas fa-cocktail cocktail-icon"></i> Passion Fruit Martini</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</span></div>
-                        <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:0.5px dotted;"><span style="font-size:1.1em;" contenteditable="true"><i class="fas fa-cocktail cocktail-icon"></i> Pink Martini</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</span></div>
-                        <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:0.5px dotted;"><span style="font-size:1.1em;" contenteditable="true"><i class="fas fa-cocktail cocktail-icon"></i> Strawberry Daiquiri</span><span class="price-cell" style="font-size:1.1em;" contenteditable="true">£5.95</span></div>
-                    </div>
-                    <div class="cocktail-deal" style="text-align:center; padding:10px; margin:16px 0; font-size:1.2em;" contenteditable="true">Any 3 Cocktails — £15.00</div>
-
-                    <!-- HAPPY HOUR PROMO (added here) -->
-                    <div class="promo-panel" style="border:1px solid #8B5A4B; padding:15px; margin:25px 0 15px; background:#FFF9F0;">
-                        <div style="text-align:center; font-size:1.4em; font-weight:bold; margin-bottom:5px;" contenteditable="true"><i class="fas fa-clock"></i> HAPPY HOUR</div>
-                        <div style="text-align:center; font-size:1.2em; font-weight:600; margin-bottom:15px;" contenteditable="true">MONDAY - THURSDAY • 5PM - 7PM</div>
-                        
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px 25px;">
-                            <!-- BEERS COLUMN -->
-                            <div>
-                                <div style="font-size:1.2em; font-weight:600; margin-bottom:5px; border-bottom:1px solid #8B5A4B;" contenteditable="true"><i class="fas fa-beer"></i> BEERS £4.99</div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">FOSTERS</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">pint</span></div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">OLD MOUT</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">pint</span></div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">JOHN SMITH</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">pint</span></div>
-                            </div>
-                            
-                            <!-- COCKTAILS & WINES COLUMN -->
-                            <div>
-                                <div style="font-size:1.2em; font-weight:600; margin-bottom:5px; border-bottom:1px solid #8B5A4B;" contenteditable="true"><i class="fas fa-cocktail"></i> COCKTAILS 2 for £10</div>
-                                <div style="font-size:1.2em; font-weight:600; margin:10px 0 5px; border-bottom:1px solid #8B5A4B;" contenteditable="true"><i class="fas fa-wine-bottle"></i> WINES £15 bottle</div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">PANUELO RED</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">bottle</span></div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">PANUELO WHITE</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">bottle</span></div>
-                                <div style="display:flex; justify-content:space-between; padding:2px 0;"><span style="font-size:1.1em;" contenteditable="true">PANUEL</span> <span style="font-size:1em; font-style:italic;" contenteditable="true">bottle</span></div>
-                            </div>
-                        </div>
-
-                        <!-- SPIRITS ROW -->
-                        <div style="margin-top:15px;">
-                            <div style="font-size:1.2em; font-weight:600; margin-bottom:5px; border-bottom:1px solid #8B5A4B;" contenteditable="true"><i class="fas fa-glass-whiskey"></i> SPIRITS Double +£2</div>
-                            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:5px;">
-                                <div style="font-size:1.1em;" contenteditable="true">SMIRNOFF</div>
-                                <div style="font-size:1.1em;" contenteditable="true">FAMOUS GROUSE</div>
-                                <div style="font-size:1.1em;" contenteditable="true">GORDONS</div>
-                                <div style="font-size:1.1em;" contenteditable="true">BACARDI</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FINAL FOOTER (hotel details) -->
-                <footer class="footer" style="margin-top:2em; padding-top:1em; border-top:1px solid; text-align:center; font-size:0.9em;">
-                    <div contenteditable="true">Craiglands Hotel · Cowpasture Road, Ilkley LS29 8RQ · 01943 430001 · www.craiglands.com</div>
-                    <div style="font-size:0.8em;" contenteditable="true">Please drink responsibly. Challenge 25. 18+</div>
-                </footer>
+<div class="craiglands">
+    <!-- HOME SCREEN - Smaller tiles, larger sub text -->
+    <div id="homeScreen" class="home-screen">
+        <div class="refined-header">
+            <div class="hotel-name">CRAIGLANDS</div>
+            <div class="hotel-sub">ANTLER BAR & LOUNGE</div>
+        </div>
+        
+        <!-- SMALLER TILES with LARGER sub text -->
+        <div class="tile-collection">
+            <div class="refined-tile" onclick="showMenu('food')">
+                <i class="fas fa-utensils"></i>
+                <div class="tile-title">FOOD MENU</div>
+                <div class="tile-desc">Starters · Mains · Burgers</div>
             </div>
-        </td></tr>
-    </tbody>
-    <!-- Table footer – repeats on every printed page automatically -->
-    <tfoot>
-        <tr>
-            <td>
-                <div class="footer-keys">
-                    <span>[V] Vegetarian</span> · 
-                    <span>[VE] Vegan</span> · 
-                    <span>[GF] Gluten Free</span> · 
-                    <span>[GFA] GF Available</span>
+            <div class="refined-tile" onclick="showMenu('drinks')">
+                <i class="fas fa-wine-glass-alt"></i>
+                <div class="tile-title">DRINKS</div>
+                <div class="tile-desc">Wines · Cocktails · Spirits</div>
+            </div>
+            <div class="refined-tile" onclick="showMenu('tea')">
+                <i class="fas fa-mug-hot"></i>
+                <div class="tile-title">AFTERNOON TEA</div>
+                <div class="tile-desc">Traditional · Cream Tea</div>
+            </div>
+            <div class="refined-tile" onclick="showMenu('sandwich')">
+                <i class="fas fa-bread-slice"></i>
+                <div class="tile-title">SANDWICHES</div>
+                <div class="tile-desc">Classic · Toasted</div>
+            </div>
+            <div class="refined-tile" onclick="showMenu('kids')">
+                <i class="fas fa-child"></i>
+                <div class="tile-title">KIDS MENU</div>
+                <div class="tile-desc">2 courses £10.95</div>
+            </div>
+            <div class="refined-tile" onclick="showMenu('happy')">
+                <i class="fas fa-clock"></i>
+                <div class="tile-title">HAPPY HOUR</div>
+                <div class="tile-desc">Mon-Thu 5-7pm</div>
+            </div>
+        </div>
+        
+        <!-- Deals - Updated with correct dinner times -->
+        <div class="offers-grid">
+            <div class="offer-card">
+                <h3><i class="fas fa-cocktail"></i> HAPPY HOUR</h3>
+                <div class="hh-offers">
+                    <div class="hh-offer"><span class="drink-type">Beers</span><div class="offer-price">£4.99</div></div>
+                    <div class="hh-offer"><span class="drink-type">Cocktails</span><div class="offer-price">2 for £10</div></div>
+                    <div class="hh-offer"><span class="drink-type">Wines</span><div class="offer-price">£15</div></div>
+                    <div class="hh-offer"><span class="drink-type">Spirits</span><div class="offer-price">+£2</div></div>
                 </div>
-                <div>All dishes prepared in a kitchen where allergens are present. Please advise your server.</div>
-            </td>
-        </tr>
-    </tfoot>
-</table>
+            </div>
+            <div class="offer-card">
+                <h3><i class="fas fa-dinner"></i> 3-COURSE DINNER</h3>
+                <div class="dinner-deal">
+                    <div class="big-price">£33</div>
+                    <div style="font-size:1.2rem; color:#e6c9a8;">per person</div>
+                    <div class="deal-time">Tue-Sat · 12.00 – 20.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FOOD MENU - Traditional layout -->
+    <div id="foodMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>FOOD MENU</h1></div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">STARTERS</div>
+            <div class="menu-row"><span class="menu-item-name">Soup of the Moment</span><span class="menu-item-price">£6.95</span></div><div class="menu-item-desc">Crusty bread roll <span class="dietary-tag">V</span> <span class="dietary-tag">VE</span></div>
+            <div class="menu-row"><span class="menu-item-name">Hoisin Pulled Pork Bao Buns</span><span class="menu-item-price">£8.95</span></div><div class="menu-item-desc">Shredded pak-choi, spring onion</div>
+            <div class="menu-row"><span class="menu-item-name">Asparagus & Parma Ham Benedict</span><span class="menu-item-price">£8.95</span></div><div class="menu-item-desc">Two poached eggs, hollandaise</div>
+            <div class="menu-row"><span class="menu-item-name">Creamed Wild Mushrooms</span><span class="menu-item-price">£8.95</span></div><div class="menu-item-desc">Garlic cream, charred sourdough <span class="dietary-tag">GFA</span></div>
+            <div class="menu-row"><span class="menu-item-name">Chilli King Prawns (5)</span><span class="menu-item-price">£10.95</span></div><div class="menu-item-desc">Pan-fried, chilli tomato sauce <span class="dietary-tag">GFA</span></div>
+            <div class="menu-row"><span class="menu-item-name">Hot Honey Halloumi</span><span class="menu-item-price">£8.95</span></div><div class="menu-item-desc">Grilled halloumi, mango salsa <span class="dietary-tag">GF</span> <span class="dietary-tag">V</span></div>
+        </div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">MAINS</div>
+            <div class="menu-row"><span class="menu-item-name">Fish & Chips</span><span class="menu-item-price">£16.95</span></div><div class="menu-item-desc">Battered haddock, chunky chips, crushed peas <span class="dietary-tag">GF</span></div>
+            <div class="menu-row"><span class="menu-item-name">Homemade Pie of the Day</span><span class="menu-item-price">£16.95</span></div><div class="menu-item-desc">Creamy mash, tenderstem broccoli, honey carrots</div>
+            <div class="menu-row"><span class="menu-item-name">Sirloin Steak</span><span class="menu-item-price">£30.95</span></div><div class="menu-item-desc">Chunky chips, grilled tomato, mushrooms, onion rings, Caesar salad <span class="dietary-tag">GFA</span></div>
+            <div class="menu-row"><span class="menu-item-name">Chicken Tikka</span><span class="menu-item-price">£18.95</span></div><div class="menu-item-desc">Tikka chicken, medium curry, garlic naan, yellow rice</div>
+        </div>
+        
+        <div class="sub-head">Burgers</div>
+        <div class="menu-item-desc">All served with fries & coleslaw · Aberdeen Angus beef</div>
+        <div class="menu-row"><span class="menu-item-name">The Craiglands Burger</span><span class="menu-item-price">£16.95</span></div><div class="menu-item-desc">Bacon, cheese, fried onion <span class="dietary-tag">GFA</span></div>
+        <div class="menu-row"><span class="menu-item-name">BBQ Burger</span><span class="menu-item-price">£16.95</span></div><div class="menu-item-desc">Cheese, BBQ sauce <span class="dietary-tag">GFA</span></div>
+        <div class="menu-row"><span class="menu-item-name">Classic Beef Burger</span><span class="menu-item-price">£15.95</span></div><div class="menu-item-desc">Plain & perfect <span class="dietary-tag">GFA</span></div>
+        <div class="menu-row"><span class="menu-item-name">Hunters Chicken Burger</span><span class="menu-item-price">£15.95</span></div><div class="menu-item-desc">Char-grilled chicken, bacon, BBQ sauce, cheese</div>
+        <div class="menu-row"><span class="menu-item-name">Loaded Veggie Burger</span><span class="menu-item-price">£14.95</span></div><div class="menu-item-desc">Halloumi, confit tomato, salsa <span class="dietary-tag">V</span></div>
+        
+        <div class="sub-head-small">Buttermilk Chicken Tenders (5)</div>
+        <div class="menu-item-desc">Fries, coleslaw, charred corn <span class="dietary-tag">GF</span></div>
+        <div class="flavour-row"><span>Garlic Parmesan</span> <span>BBQ</span> <span>Honey Sriracha</span> <span>Cajun</span> <span>Plain</span></div>
+        <div class="price-note">all £13.95</div>
+        
+        <div class="sub-head-small">Crispy Chicken Wings (6)</div>
+        <div class="menu-item-desc">Fries, coleslaw, baby corn</div>
+        <div class="flavour-row"><span>Garlic Parmesan</span> <span>BBQ</span> <span>Honey Sriracha</span> <span>Salted</span> <span>Cajun</span> <span>Plain</span></div>
+        <div class="price-note">all £12.95</div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">SIDES</div>
+            <div class="menu-row"><span class="menu-item-name">Hand Battered Onion Rings</span><span class="menu-item-price">£5.95</span></div>
+            <div class="menu-row"><span class="menu-item-name">Aspen Fries</span><span class="menu-item-price">£6.95</span></div><div class="menu-item-desc">Parmesan, chives, truffle oil</div>
+            <div class="menu-row"><span class="menu-item-name">Fries</span><span class="menu-item-price">£5.95</span></div>
+            <div class="menu-row"><span class="menu-item-name">Corn on the Cob</span><span class="menu-item-price">£5.95</span></div>
+            <div class="menu-row"><span class="menu-item-name">Caesar Salad</span><span class="menu-item-price">£6.95</span></div>
+            <div class="menu-row"><span class="menu-item-name">Butter Glazed Market Veg</span><span class="menu-item-price">£6.95</span></div>
+        </div>
+    </div>
+    
+    <!-- DRINKS MENU - Traditional -->
+    <div id="drinksMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>DRINKS</h1></div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">CHAMPAGNE & SPARKLING</div>
+            <div class="menu-row"><span class="menu-item-name">Le Alante Prosecco</span><span class="menu-item-price">£30</span></div>
+            <div class="menu-row"><span class="menu-item-name">Galanti Prosecco</span><span class="menu-item-price">£35</span></div><div class="menu-item-desc">125ml £7.50</div>
+            <div class="menu-row"><span class="menu-item-name">Galanti Spumante</span><span class="menu-item-price">£28.50</span></div>
+            <div class="menu-row"><span class="menu-item-name">Laurent-Perrier Brut</span><span class="menu-item-price">£70</span></div>
+        </div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">WHITE WINE</div>
+            <div class="menu-row"><span class="menu-item-name">Borsari Inzolia, Sicily</span><span class="menu-item-price">£25</span></div><div class="menu-item-desc">250ml £8.50</div>
+            <div class="menu-row"><span class="menu-item-name">Pinot Grigio, Pavia</span><span class="menu-item-price">£28</span></div><div class="menu-item-desc">250ml £8.95</div>
+            <div class="menu-row"><span class="menu-item-name">The Paddock Chardonnay</span><span class="menu-item-price">£27</span></div>
+            <div class="menu-row"><span class="menu-item-name">Short Mile Bay Sauvignon Blanc</span><span class="menu-item-price">£28</span></div>
+            <div class="menu-row"><span class="menu-item-name">Kleine Zalze Chenin Blanc</span><span class="menu-item-price">£29</span></div>
+            <div class="menu-row"><span class="menu-item-name">Waipara Hills Sauvignon Blanc</span><span class="menu-item-price">£36</span></div>
+            <div class="menu-row"><span class="menu-item-name">Petit Chablis</span><span class="menu-item-price">£38</span></div>
+        </div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">RED WINE</div>
+            <div class="menu-row"><span class="menu-item-name">Borsari Cabernet Sauvignon</span><span class="menu-item-price">£25</span></div>
+            <div class="menu-row"><span class="menu-item-name">Granfort Cabernet Sauvignon</span><span class="menu-item-price">£27.50</span></div>
+            <div class="menu-row"><span class="menu-item-name">Berri Estates Merlot</span><span class="menu-item-price">£30</span></div>
+            <div class="menu-row"><span class="menu-item-name">Marques de Morano Rioja</span><span class="menu-item-price">£30</span></div>
+            <div class="menu-row"><span class="menu-item-name">Rare Vineyards Pinot Noir</span><span class="menu-item-price">£32.50</span></div>
+            <div class="menu-row"><span class="menu-item-name">Portillo Malbec</span><span class="menu-item-price">£35</span></div>
+            <div class="menu-row"><span class="menu-item-name">Red Knot Shiraz</span><span class="menu-item-price">£37.50</span></div>
+        </div>
+        
+        <div class="menu-section">
+            <div class="menu-section-title">BEERS & CIDER</div>
+            <div class="menu-row"><span class="menu-item-name">Heineken</span><span class="menu-item-price">£6.50</span></div><div class="menu-item-desc">½ £3.50</div>
+            <div class="menu-row"><span class="menu-item-name">Moretti</span><span class="menu-item-price">£7.50</span></div><div class="menu-item-desc">½ £4.10</div>
+            <div class="menu-row"><span class="menu-item-name">Neck Oil</span><span class="menu-item-price">£7.50</span></div>
+            <div class="menu-row"><span class="menu-item-name">Fosters</span><span class="menu-item-price">£5.60</span></div>
+            <div class="menu-row"><span class="menu-item-name">John Smiths</span><span class="menu-item-price">£5.60</span></div>
+            <div class="menu-row"><span class="menu-item-name">Strongbow</span><span class="menu-item-price">£5.90</span></div>
+            <div class="menu-row"><span class="menu-item-name">Strongbow Dark Fruit</span><span class="menu-item-price">£6.50</span></div>
+        </div>
+        
+        <div class="special-panel">
+            <div class="big-text">SPIRITS & LIQUEURS</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:20px;">
+                <div>Smirnoff £4.55</div><div>Gordon's £4.65</div><div>Bombay £4.75</div>
+                <div>Tanqueray £5.00</div><div>Jack Daniels £4.95</div><div>Jameson £4.95</div>
+                <div>Famous Grouse £4.50</div><div>Glenfiddich £6.00</div><div>Macallan £7.10</div>
+                <div>Bacardi £4.65</div><div>Malibu £4.55</div><div>Baileys £4.80</div>
+            </div>
+            <div style="margin-top:15px; font-style:italic;">Double measures +£2</div>
+        </div>
+    </div>
+    
+    <!-- AFTERNOON TEA -->
+    <div id="teaMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>AFTERNOON TEA</h1></div>
+        <div class="special-panel">
+            <div class="big-text">Traditional Afternoon Tea</div>
+            <div style="font-size:2.5rem; color:#8B5A4B;">£24.95</div>
+            <div style="margin:15px 0;">Finger sandwiches, warm scones, clotted cream, strawberry jam, patisserie, tea or coffee</div>
+            <div class="dietary-tag">12-5pm daily</div>
+        </div>
+        <div class="special-panel">
+            <div class="big-text">Cream Tea</div>
+            <div style="font-size:2.5rem; color:#8B5A4B;">£7.95</div>
+            <div style="margin:15px 0;">Fruit scone, clotted cream, strawberry jam, tea or coffee</div>
+            <div class="dietary-tag">DF & GF options</div>
+        </div>
+    </div>
+    
+    <!-- SANDWICH MENU -->
+    <div id="sandwichMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>SANDWICHES</h1></div>
+        <div class="menu-item-desc" style="margin-bottom:20px;">All served on white or brown bread with house salad and crisps</div>
+        <div class="menu-row"><span class="menu-item-name">Ham, Tomato & English Mustard</span><span class="menu-item-price">£8.95</span></div>
+        <div class="menu-row"><span class="menu-item-name">Tuna, Red Onion & Mayonnaise</span><span class="menu-item-price">£8.95</span></div>
+        <div class="menu-row"><span class="menu-item-name">Cheddar Cheese & Pickle</span><span class="menu-item-price">£7.95</span></div><div class="menu-item-desc"><span class="dietary-tag">V</span></div>
+        <div class="menu-row"><span class="menu-item-name">Egg & Cress</span><span class="menu-item-price">£7.95</span></div><div class="menu-item-desc"><span class="dietary-tag">V</span></div>
+    </div>
+    
+    <!-- KIDS MENU -->
+    <div id="kidsMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>KIDS MENU</h1></div>
+        <div class="kids-panel">
+            <div class="kids-price-badge">2 courses £10.95 · 3 courses £12.95</div>
+            <div class="sub-head-small">Starters</div>
+            <div class="menu-row"><span class="menu-item-name">Tomato Soup</span><span class="menu-item-price">included</span></div><div class="menu-item-desc">Sliced white bread</div>
+            <div class="menu-row"><span class="menu-item-name">Cheesy Garlic Bread</span><span class="menu-item-price">included</span></div>
+            <div class="menu-row"><span class="menu-item-name">Mozzarella Dippers</span><span class="menu-item-price">included</span></div><div class="menu-item-desc">Tomato salsa <span class="dietary-tag">V</span></div>
+            
+            <div class="sub-head-small">Mains</div>
+            <div class="menu-row"><span class="menu-item-name">Chicken Tenders, Fries & Beans</span><span class="menu-item-price">included</span></div>
+            <div class="menu-row"><span class="menu-item-name">Burger, Fries & Beans</span><span class="menu-item-price">included</span></div><div class="menu-item-desc">Add cheese £1.25</div>
+            <div class="menu-row"><span class="menu-item-name">Ciabatta Pizza Bread, Fries & Beans</span><span class="menu-item-price">included</span></div>
+            <div class="menu-row"><span class="menu-item-name">Mini Fish Bites, Fries & Mushy Peas</span><span class="menu-item-price">included</span></div>
+            
+            <div class="sub-head-small">Desserts</div>
+            <div class="menu-row"><span class="menu-item-name">Ice Cream</span><span class="menu-item-price">included</span></div>
+            <div class="menu-row"><span class="menu-item-name">Mini Choc Brownie</span><span class="menu-item-price">included</span></div>
+            <div class="menu-row"><span class="menu-item-name">Donut Fondue</span><span class="menu-item-price">included</span></div>
+        </div>
+    </div>
+    
+    <!-- HAPPY HOUR -->
+    <div id="happyMenu" class="menu-page">
+        <button class="back-button" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back to Menus</button>
+        <div class="menu-header"><h1>HAPPY HOUR</h1></div>
+        <div class="special-panel">
+            <div style="font-size:2rem; color:#8B5A4B;">Monday – Thursday</div>
+            <div style="font-size:1.8rem; margin-bottom:20px;">5pm – 7pm</div>
+            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+                <div><div class="sub-head-small">Beers</div><div style="font-size:2.5rem; color:#8B5A4B;">£4.99</div></div>
+                <div><div class="sub-head-small">Cocktails</div><div style="font-size:2.5rem; color:#8B5A4B;">2 for £10</div></div>
+                <div><div class="sub-head-small">Wines</div><div style="font-size:2.5rem; color:#8B5A4B;">£15</div></div>
+                <div><div class="sub-head-small">Spirits</div><div style="font-size:2.5rem; color:#8B5A4B;">+£2</div></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <div class="footer-keys">
+        <span class="dietary-tag">V Vegetarian</span> <span class="dietary-tag">VE Vegan</span> 
+        <span class="dietary-tag">GF Gluten Free</span> <span class="dietary-tag">GFA GF Available</span>
+        <div style="margin-top:15px;">Craiglands Hotel · Cowpasture Road, Ilkley LS29 8RQ · 01943 430001</div>
+    </div>
 </div>
-</div> <!-- end print-wrapper -->
 
 <script>
-    (function() {
-        const contentDiv = document.getElementById('menuContent');
-        const menuTable = document.getElementById('menuTable');
-        const preview = document.querySelector('.menu-preview');
-        const archSelector = document.getElementById('archSelector');
-        const fontSelector = document.getElementById('fontSelector');
-        const baseFontSize = document.getElementById('baseFontSize');
-        const lineSpacing = document.getElementById('lineSpacing');
-        const printBtn = document.getElementById('printBtn');
-        const saveBtn = document.getElementById('saveBtn');
-        const addSectionBtn = document.getElementById('addSectionBtn');
-        const addDishBtn = document.getElementById('addDishBtn');
-        const insertAboveBtn = document.getElementById('insertAboveBtn');
-        const insertBelowBtn = document.getElementById('insertBelowBtn');
-        const deleteBtn = document.getElementById('deleteBtn');
-        const duplicateBtn = document.getElementById('duplicateBtn');
-        const moveUpBtn = document.getElementById('moveUpBtn');
-        const moveDownBtn = document.getElementById('moveDownBtn');
-        const increasePriceBtn = document.getElementById('increasePriceBtn');
-        const decreasePriceBtn = document.getElementById('decreasePriceBtn');
-        const priceAdjust = document.getElementById('priceAdjust');
-
-        // Update base font size (scales everything)
-        function updateBaseFont() {
-            contentDiv.style.fontSize = baseFontSize.value + 'pt';
-        }
-        baseFontSize.addEventListener('input', updateBaseFont);
-
-        // Update line spacing (affects whole table)
-        function updateLineSpacing() {
-            menuTable.style.lineHeight = lineSpacing.value;
-        }
-        lineSpacing.addEventListener('input', updateLineSpacing);
-
-        // Selection handling
-        let selectedElement = null;
-
-        contentDiv.addEventListener('click', (e) => {
-            const item = e.target.closest('.section-block, .menu-item-block');
-            if (item) {
-                if (selectedElement) selectedElement.classList.remove('selected');
-                item.classList.add('selected');
-                selectedElement = item;
-                e.stopPropagation();
-            } else {
-                if (selectedElement) selectedElement.classList.remove('selected');
-                selectedElement = null;
-            }
-        });
-
-        function createNewDish() {
-            const newDish = document.createElement('div');
-            newDish.className = 'menu-item-block';
-            newDish.innerHTML = `
-                <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">New Dish</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£0.00</td></tr></table>
-                <div class="desc" style="font-size:1em;" contenteditable="true">Description</div>
-            `;
-            return newDish;
-        }
-
-        addSectionBtn.addEventListener('click', () => {
-            const newSection = document.createElement('div');
-            newSection.className = 'section-block';
-            newSection.innerHTML = `
-                <div class="section-title" style="font-size:2.2em;" contenteditable="true">NEW SECTION</div>
-                <div class="menu-item-block">
-                    <table class="menu-table"><tr><td class="item-name-cell" style="font-size:1.1em;" contenteditable="true">New Dish</td><td class="price-cell" style="font-size:1.1em;" contenteditable="true">£0.00</td></tr></table>
-                    <div class="desc" style="font-size:1em;" contenteditable="true">Description</div>
-                </div>
-            `;
-            contentDiv.appendChild(newSection);
-        });
-
-        addDishBtn.addEventListener('click', () => {
-            if (!selectedElement || !selectedElement.classList.contains('section-block')) {
-                alert('Please select a section first');
-                return;
-            }
-            selectedElement.appendChild(createNewDish());
-        });
-
-        insertAboveBtn.addEventListener('click', () => {
-            if (!selectedElement || !selectedElement.classList.contains('menu-item-block')) {
-                alert('Please select a dish first');
-                return;
-            }
-            const newDish = createNewDish();
-            selectedElement.parentNode.insertBefore(newDish, selectedElement);
-        });
-
-        insertBelowBtn.addEventListener('click', () => {
-            if (!selectedElement || !selectedElement.classList.contains('menu-item-block')) {
-                alert('Please select a dish first');
-                return;
-            }
-            const newDish = createNewDish();
-            selectedElement.parentNode.insertBefore(newDish, selectedElement.nextSibling);
-        });
-
-        deleteBtn.addEventListener('click', () => {
-            if (!selectedElement) { alert('Select an item first'); return; }
-            if (confirm('Delete selected item?')) {
-                selectedElement.remove();
-                selectedElement = null;
-            }
-        });
-
-        duplicateBtn.addEventListener('click', () => {
-            if (!selectedElement) { alert('Select an item first'); return; }
-            const clone = selectedElement.cloneNode(true);
-            selectedElement.parentNode.insertBefore(clone, selectedElement.nextSibling);
-        });
-
-        moveUpBtn.addEventListener('click', () => {
-            if (!selectedElement) return;
-            const prev = selectedElement.previousElementSibling;
-            if (prev && !prev.classList.contains('page-break')) {
-                selectedElement.parentNode.insertBefore(selectedElement, prev);
-            }
-        });
-        moveDownBtn.addEventListener('click', () => {
-            if (!selectedElement) return;
-            const next = selectedElement.nextElementSibling;
-            if (next && !next.classList.contains('page-break')) {
-                selectedElement.parentNode.insertBefore(next, selectedElement);
-            }
-        });
-
-        function adjustPrice(delta) {
-            const targets = selectedElement && selectedElement.classList.contains('menu-item-block')
-                ? [selectedElement]
-                : contentDiv.querySelectorAll('.menu-item-block');
-            targets.forEach(item => {
-                const priceCell = item.querySelector('.price-cell');
-                if (priceCell) {
-                    let txt = priceCell.innerText;
-                    let match = txt.match(/[£]?([\d.]+)/);
-                    if (match) {
-                        let val = parseFloat(match[1]) + delta;
-                        priceCell.innerText = '£' + val.toFixed(2);
-                    }
-                }
-            });
-        }
-        increasePriceBtn.addEventListener('click', () => {
-            let step = parseFloat(priceAdjust.value) || 0.5;
-            adjustPrice(step);
-        });
-        decreasePriceBtn.addEventListener('click', () => {
-            let step = parseFloat(priceAdjust.value) || 0.5;
-            adjustPrice(-step);
-        });
-
-        document.querySelectorAll('.dietary-quick').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (!selectedElement || !selectedElement.classList.contains('menu-item-block')) {
-                    alert('Select a dish first');
-                    return;
-                }
-                const tag = btn.getAttribute('data-tag');
-                const descDiv = selectedElement.querySelector('.desc, .burger-desc');
-                if (descDiv) {
-                    const span = document.createElement('span');
-                    span.className = 'dietary';
-                    span.setAttribute('contenteditable', 'true');
-                    span.style.fontSize = '0.8em';
-                    span.innerText = '[' + tag + ']';
-                    descDiv.appendChild(span);
-                } else {
-                    const span = document.createElement('span');
-                    span.className = 'dietary';
-                    span.setAttribute('contenteditable', 'true');
-                    span.style.fontSize = '0.8em';
-                    span.innerText = '[' + tag + ']';
-                    selectedElement.appendChild(span);
-                }
-            });
-        });
-
-        archSelector.addEventListener('change', () => {
-            preview.classList.remove('arch-brasserie', 'arch-minimal', 'arch-tavern', 'arch-deco', 'arch-inn', 'arch-coastal', 'arch-heritage', 'arch-botanical');
-            preview.classList.add(archSelector.value);
-        });
-        fontSelector.addEventListener('change', () => {
-            preview.style.fontFamily = fontSelector.value;
-        });
-
-        printBtn.addEventListener('click', () => window.print());
-
-        saveBtn.addEventListener('click', () => {
-            const currentArch = archSelector.value;
-            const currentFont = preview.style.fontFamily || fontSelector.value;
-            const currentLineHeight = menuTable.style.lineHeight || lineSpacing.value;
-            const currentBaseSize = contentDiv.style.fontSize || baseFontSize.value + 'pt';
-            const content = contentDiv.innerHTML;
-            const toolbarHTML = document.querySelector('.toolbar').outerHTML;
-            const tfootHTML = document.querySelector('.menu-table-container tfoot').outerHTML;
-
-            let styles = '';
-            const sheets = document.styleSheets;
-            for (let i = 0; i < sheets.length; i++) {
-                try {
-                    const rules = sheets[i].cssRules || sheets[i].rules;
-                    if (rules) {
-                        for (let j = 0; j < rules.length; j++) {
-                            if (rules[j].cssText) styles += rules[j].cssText;
-                        }
-                    }
-                } catch(e) {}
-            }
-
-            const fullDoc = `<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>Craiglands · complete final menu</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>${styles}</style>
-</head>
-<body>
-${toolbarHTML}
-<div class="print-wrapper">
-<div class="menu-preview ${currentArch}" style="font-family:${currentFont};">
-<table class="menu-table-container" style="line-height:${currentLineHeight};">
-    <tbody>
-        <tr><td>
-            <div class="menu-content" style="font-size:${currentBaseSize};">${content}</div>
-        </td></tr>
-    </tbody>
-    ${tfootHTML}
-</table>
-</div>
-</div>
-<script>
-    (function() {
-        const preview = document.querySelector('.menu-preview');
-        const archSel = document.getElementById('archSelector');
-        const fontSel = document.getElementById('fontSelector');
-        const lineSpacing = document.getElementById('lineSpacing');
-        const printBtn = document.getElementById('printBtn');
-        const saveBtn = document.getElementById('saveBtn');
-        if(archSel) archSel.addEventListener('change', function() {
-            preview.classList.remove('arch-brasserie', 'arch-minimal', 'arch-tavern', 'arch-deco', 'arch-inn', 'arch-coastal', 'arch-heritage', 'arch-botanical');
-            preview.classList.add(this.value);
-        });
-        if(fontSel) fontSel.addEventListener('change', function() { preview.style.fontFamily = this.value; });
-        if(lineSpacing) lineSpacing.addEventListener('input', function() { preview.style.lineHeight = this.value; });
-        if(printBtn) printBtn.addEventListener('click', function() { window.print(); });
-        if(saveBtn) saveBtn.addEventListener('click', function() { alert('Save again to create a new file'); });
-    })();
-<\/script>
-</body>
-</html>`;
-
-            const blob = new Blob([fullDoc], {type: 'text/html'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'craiglands_complete_final.html';
-            a.click();
-            URL.revokeObjectURL(url);
-        });
-
-        // Initialise
-        updateBaseFont();
-        updateLineSpacing();
-    })();
+    function showHome() {
+        document.getElementById('homeScreen').classList.remove('hidden');
+        const menus = document.querySelectorAll('.menu-page');
+        menus.forEach(menu => menu.classList.remove('active'));
+    }
+    
+    function showMenu(menuId) {
+        document.getElementById('homeScreen').classList.add('hidden');
+        const menus = document.querySelectorAll('.menu-page');
+        menus.forEach(menu => menu.classList.remove('active'));
+        document.getElementById(menuId + 'Menu').classList.add('active');
+    }
 </script>
 </body>
 </html>
