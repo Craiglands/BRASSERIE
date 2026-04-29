@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scan Our Menu · Craiglands Brasserie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:       #1a140f;
+    --ink-soft:  #4f3e2c;
+    --paper:     #fbf7ef;
+    --paper-2:   #f3e9d4;
+    --gold:      #b8874a;
+    --gold-deep: #8b5a2b;
+    --rust:      #7a4b2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #cbc2b6;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 30px 16px 40px;
+  }
+
+  /* control bar (hidden on print) */
+  .controls {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .controls button, .controls a {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    background: #1e1915;
+    color: #e9d6af;
+    border: 1px solid #b8874a;
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .controls button:hover, .controls a:hover {
+    background: var(--gold);
+    color: #1e1915;
+  }
+
+  /* the printable card */
+  .card {
+    width: 105mm;            /* A6 width */
+    min-height: 148mm;       /* A6 height */
+    background: var(--paper);
+    padding: 14mm 12mm;
+    text-align: center;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+    position: relative;
+    display: flex; flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(184,135,74,0.25);
+  }
+  .card::before, .card::after {
+    content: '';
+    position: absolute; width: 18px; height: 18px;
+    border: 1px solid var(--gold);
+  }
+  .card::before { top: 6mm; left: 6mm; border-right: 0; border-bottom: 0; }
+  .card::after  { bottom: 6mm; right: 6mm; border-left: 0; border-top: 0; }
+
+  .frame {
+    width: 100%;
+    flex: 1;
+    display: flex; flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(184,135,74,0.45);
+    padding: 14px 12px 18px;
+  }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .brand {
+    font-family: 'Cinzel', serif;
+    font-size: 22pt;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--ink);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin: 6px 0 12px;
+  }
+  .divider .l { width: 28px; height: 1px; background: var(--gold); }
+  .divider .o { font-size: 10pt; letter-spacing: 3px; color: var(--gold); }
+
+  .invite {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13pt;
+    color: var(--ink-soft);
+    margin: 4px 0 10px;
+  }
+
+  .qr-wrap {
+    background: #fff;
+    padding: 8px;
+    border: 1px solid rgba(184,135,74,0.3);
+    margin: 6px 0 10px;
+    line-height: 0;
+  }
+  #qr canvas { display: block; image-rendering: pixelated; }
+
+  .scan {
+    font-family: 'Cinzel', serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .url {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: var(--ink-soft);
+    letter-spacing: 1px;
+    margin-top: 4px;
+    word-break: break-all;
+  }
+
+  .footer-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  /* download button on canvas */
+  .dl-row { margin-top: 10px; font-size: 11px; color: #4f3e2c; }
+  .dl-row a { color: var(--gold-deep); }
+
+  @media print {
+    body { background: white; padding: 0; margin: 0; }
+    .controls, .dl-row { display: none !important; }
+    .card { box-shadow: none; border: 0; margin: 0 auto; }
+    @page { size: A6; margin: 5mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button onclick="window.print()">🖨 Print Card</button>
+  <button id="dlBtn">⬇ Download PNG</button>
+  <a href="index.html">← Back to Menu</a>
+</div>
+
+<div class="card" id="card">
+  <div class="frame">
+    <div class="eyebrow">Welcome</div>
+    <div class="brand">Craiglands</div>
+    <div class="sub">Brasserie · Antler Bar &amp; Lounge</div>
+    <div class="divider"><span class="l"></span><span class="o">✦ ✦</span><span class="l"></span></div>
+    <div class="invite">View our menu &amp; reservations</div>
+
+    <div class="qr-wrap"><div id="qr"></div></div>
+
+    <div class="scan">Scan with your camera</div>
+    <div class="url">craiglands.github.io/BRASSERIE</div>
+  </div>
+  <div class="footer-line">Cowpasture Road · Ilkley · LS29 8RQ</div>
+</div>
+
+<div class="dl-row" id="dlNote"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<script>
+  const TARGET_URL = 'https://craiglands.github.io/BRASSERIE/';
+
+  // Generate QR
+  const qrContainer = document.getElementById('qr');
+  const canvas = document.createElement('canvas');
+  qrContainer.appendChild(canvas);
+
+  QRCode.toCanvas(canvas, TARGET_URL, {
+    width: 280,
+    margin: 1,
+    errorCorrectionLevel: 'H',  // high error correction — survives print scuffs
+    color: { dark: '#1a140f', light: '#ffffff' }
+  }, function (err) {
+    if (err) {
+      qrContainer.innerHTML =
+        '<img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=4&ecc=H&data=' +
+        encodeURIComponent(TARGET_URL) + '">';
+    }
+  });
+
+  // Download as PNG
+  document.getElementById('dlBtn').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'craiglands-menu-qr.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+</script>
+
+</body>
+</html>
