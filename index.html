@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Craiglands Brasserie · Antler Bar &amp; Lounge · Ilkley</title>
+<meta name="description" content="Craiglands Brasserie, Antler Bar &amp; Lounge — all-day menu, afternoon tea, sandwiches, mains, sharing boards and exclusive dining offers in Ilkley." />
+<meta name="theme-color" content="#1e1915" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a140f;
+    --ink-soft:   #4f3e2c;
+    --paper:      #f6f0e6;
+    --paper-2:    #ece2d0;
+    --cream:      #fbf7ef;
+    --gold:       #b8874a;
+    --gold-deep:  #8b5a2b;
+    --gold-soft:  #c9aa72;
+    --rust:       #7a4b2c;
+    --line:       #d9c8b2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+
+  /* ================== NAV ================== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(30, 25, 21, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #e9d6af;
+    border-bottom: 1px solid rgba(184, 135, 74, 0.3);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+  }
+  .nav-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #e9d6af;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 26px; list-style: none;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .nav-links a {
+    color: #d9c8b2; text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-links a:hover { color: #f3dca5; border-bottom-color: var(--gold); }
+  .nav-toggle {
+    display: none; background: none; border: 1px solid rgba(233,214,175,0.4);
+    color: #e9d6af; padding: 6px 12px; border-radius: 4px;
+    font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; cursor: pointer;
+  }
+
+  /* ================== HERO ================== */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    color: #f3e3c0;
+    background-color: #1e1915;
+    background-image: url('CRAIGLANDS%202023-22%20reduced.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(60,38,18,0.15), rgba(20,12,5,0.65) 80%),
+      linear-gradient(180deg, rgba(50,30,15,0.2) 0%, rgba(15,10,5,0.55) 100%);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(220,170,90,0.08), transparent 55%);
+    pointer-events: none;
+  }
+  @media (max-width: 900px) {
+    .hero { background-attachment: scroll; }
+  }
+  .hero-frame {
+    position: relative;
+    border: 1px solid rgba(201, 170, 114, 0.4);
+    padding: 56px 48px;
+    max-width: 760px;
+  }
+  .hero-frame::before, .hero-frame::after {
+    content: '';
+    position: absolute; width: 24px; height: 24px;
+    border: 1px solid var(--gold);
+  }
+  .hero-frame::before { top: -8px; left: -8px; border-right: 0; border-bottom: 0; }
+  .hero-frame::after  { bottom: -8px; right: -8px; border-left: 0; border-top: 0; }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 8px;
+    color: var(--gold-soft);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(36px, 8vw, 78px);
+    font-weight: 800;
+    letter-spacing: clamp(4px, 1.2vw, 14px);
+    line-height: 1;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    color: #f7e8c5;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 3.2vw, 30px);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--gold-soft);
+    margin-bottom: 28px;
+  }
+  .hero-rule {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin: 18px auto 26px;
+  }
+  .hero-rule .l { width: 60px; height: 1px; background: var(--gold); }
+  .hero-rule .o { font-size: 12px; letter-spacing: 4px; color: var(--gold); }
+
+  .hero-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 3px;
+    color: #c9b697;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .hero-cta {
+    display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer; border: 1px solid var(--gold);
+    transition: background .25s, color .25s, transform .25s;
+  }
+  .btn-primary { background: var(--gold); color: #1e1915; }
+  .btn-primary:hover { background: var(--gold-soft); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: #f3e3c0; }
+  .btn-ghost:hover { background: rgba(233,214,175,0.1); }
+
+  /* ================== SECTIONS ================== */
+  section.menu-section {
+    padding: 90px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  section.menu-section.alt { background: var(--cream); max-width: none; }
+  section.menu-section.alt .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 700;
+    letter-spacing: clamp(2px, 0.6vw, 6px);
+    color: var(--ink);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 580px; margin: 0 auto;
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin: 22px 0 0;
+  }
+  .divider .l { width: 60px; height: 1px; background: var(--gold); }
+  .divider .o { font-size: 13px; letter-spacing: 4px; color: var(--gold); }
+
+  /* ================== GRID & CARDS ================== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 44px;
+  }
+  .grid.tight { gap: 12px 44px; }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+
+  .item {
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(184,135,74,0.25);
+  }
+  .item:last-child { border-bottom: 0; }
+  .item-row {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 4px;
+  }
+  .item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .dots {
+    flex: 1; min-width: 16px;
+    border-bottom: 1.5px dotted rgba(122,75,44,0.35);
+    transform: translateY(-4px);
+  }
+  .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600; font-style: italic;
+    color: var(--gold-deep);
+    white-space: nowrap;
+  }
+  .desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 95%;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--gold-deep);
+    border: 1px solid rgba(184,135,74,0.5);
+    border-radius: 999px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    vertical-align: 2px;
+  }
+
+  /* category subhead inside section */
+  .cat-head {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .cat-title {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .cat-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .cat-block { margin-bottom: 56px; }
+  .cat-block:last-child { margin-bottom: 0; }
+
+  /* ================== OFFER PANELS ================== */
+  .offers-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .offer {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(180deg, #fbf7ef 0%, #f3e9d4 100%);
+    border: 1px solid rgba(184,135,74,0.35);
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .offer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(30,25,21,0.18);
+  }
+  .offer-image {
+    width: 100%;
+    background: linear-gradient(180deg, #fff, #f3e9d4);
+    padding: 22px;
+    border-bottom: 1px solid rgba(184,135,74,0.25);
+    text-align: center;
+  }
+  .offer-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform .6s ease;
+  }
+  .offer:hover .offer-image img { transform: scale(1.02); }
+  .offer-body { padding: 24px 28px 28px; position: relative; }
+  .offer-body::before, .offer-body::after {
+    content: ''; position: absolute; width: 18px; height: 18px;
+    border: 1px solid var(--gold);
+  }
+  .offer-body::before { top: 8px; left: 8px; border-right: 0; border-bottom: 0; }
+  .offer-body::after  { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
+
+  .offer-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .offer-title {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--rust);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .offer-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .offer-line.bold {
+    font-weight: 700;
+    color: var(--rust);
+  }
+  .offer-price {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--gold-deep);
+    margin: 14px 0 6px;
+    letter-spacing: 2px;
+  }
+
+  /* ================== FEATURE PANEL ================== */
+  .feature {
+    border: 1px solid rgba(184,135,74,0.4);
+    background: rgba(184,135,74,0.05);
+    text-align: center;
+    padding: 22px 24px;
+    margin: 30px auto 0;
+    max-width: 520px;
+  }
+  .feature-t {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .feature-d {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .feature-p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    margin-top: 6px;
+  }
+
+  /* ================== WELCOME OVERLAY ================== */
+  .welcome {
+    position: fixed; inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 10, 6, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto;
+  }
+  .welcome.show { display: flex; animation: welcomeFade .45s ease; }
+  @keyframes welcomeFade { from { opacity: 0; } to { opacity: 1; } }
+
+  .welcome-card {
+    position: relative;
+    background: #fbf7ef;
+    color: var(--ink);
+    max-width: 940px;
+    width: 100%;
+    max-height: 94vh;
+    overflow-y: auto;
+    padding: 40px 36px 36px;
+    border: 1px solid var(--gold);
+    text-align: center;
+    animation: welcomeRise .55s ease both;
+  }
+  @keyframes welcomeRise {
+    from { opacity: 0; transform: translateY(28px) scale(.98); }
+    to   { opacity: 1; transform: none; }
+  }
+  .welcome-card::before, .welcome-card::after {
+    content: ''; position: absolute; width: 22px; height: 22px;
+    border: 1px solid var(--gold);
+  }
+  .welcome-card::before { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+  .welcome-card::after  { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+  .welcome-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 38px; height: 38px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--rust);
+    font-size: 22px;
+    line-height: 1;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+    z-index: 2;
+  }
+  .welcome-close:hover { background: var(--gold-deep); color: #fff; }
+
+  .welcome-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .welcome-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--ink);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .welcome-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .welcome-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; margin: 14px 0 20px;
+  }
+  .welcome-divider .l { width: 50px; height: 1px; background: var(--gold); }
+  .welcome-divider .o { font-size: 12px; letter-spacing: 4px; color: var(--gold); }
+
+  .welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 0 0 24px;
+  }
+  .welcome-grid .promo {
+    background: linear-gradient(180deg, #fff, #f3e9d4);
+    border: 1px solid rgba(184,135,74,0.3);
+    padding: 12px;
+  }
+  .welcome-grid img { width: 100%; height: auto; display: block; }
+  @media (max-width: 640px) {
+    .welcome-grid { grid-template-columns: 1fr; }
+    .welcome-card { padding: 36px 18px 24px; }
+  }
+
+  .welcome-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  .welcome-actions .btn { cursor: pointer; }
+  .welcome-actions .btn-ghost {
+    color: var(--rust);
+    border-color: var(--gold);
+    background: transparent;
+  }
+  .welcome-actions .btn-ghost:hover {
+    background: rgba(184,135,74,0.1);
+  }
+
+  /* ================== BOOKING FORM ================== */
+  .booking-section {
+    background:
+      linear-gradient(180deg, rgba(20,16,12,0.78), rgba(20,16,12,0.85)),
+      url('CRAIGLANDS%202023-22%20reduced.jpg') center/cover fixed;
+    color: #f3e3c0;
+    padding: 100px 24px;
+    text-align: center;
+  }
+  .booking-section .section-title { color: #f7e8c5; }
+  .booking-section .section-eyebrow { color: var(--gold-soft); }
+  .booking-section .section-desc { color: #d9c8b2; }
+
+  .booking-card {
+    max-width: 760px;
+    margin: 40px auto 0;
+    background: rgba(251, 247, 239, 0.97);
+    color: var(--ink);
+    padding: 50px 44px;
+    border: 1px solid var(--gold);
+    text-align: left;
+    position: relative;
+  }
+  .booking-card::before, .booking-card::after {
+    content: ''; position: absolute; width: 22px; height: 22px;
+    border: 1px solid var(--gold);
+  }
+  .booking-card::before { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+  .booking-card::after  { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid rgba(184,135,74,0.4);
+    padding: 12px 14px;
+    border-radius: 2px;
+    transition: border-color .2s, box-shadow .2s;
+    width: 100%;
+  }
+  .form-field textarea {
+    resize: vertical;
+    min-height: 90px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--gold-deep);
+    box-shadow: 0 0 0 3px rgba(184,135,74,0.15);
+  }
+  .form-actions {
+    text-align: center;
+    margin-top: 26px;
+  }
+  .form-actions .btn {
+    border: 1px solid var(--gold-deep);
+    background: var(--gold-deep);
+    color: #fff;
+    padding: 16px 44px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .form-actions .btn:hover { background: var(--rust); border-color: var(--rust); }
+  .form-fallback {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 18px;
+    line-height: 1.6;
+  }
+  .form-fallback a { color: var(--gold-deep); text-decoration: underline; }
+  .form-thanks {
+    display: none;
+    background: rgba(184,135,74,0.1);
+    border: 1px solid var(--gold);
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--rust);
+  }
+  .form-thanks.show { display: block; }
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; gap: 14px; }
+    .booking-card { padding: 40px 24px; }
+  }
+
+  /* ================== HOURS BAR ================== */
+  .hours-bar {
+    background: var(--paper-2);
+    text-align: center;
+    padding: 28px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .hours-bar span { color: var(--gold-deep); }
+  .hours-bar .sep { margin: 0 16px; color: var(--gold); }
+
+  /* ================== FOOTER ================== */
+  footer {
+    background: #1e1915;
+    color: #d9c8b2;
+    padding: 70px 24px 30px;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 8px;
+    color: #f3e3c0;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .footer-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold-soft);
+    letter-spacing: 3px;
+    margin-bottom: 26px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .footer-col p, .footer-col a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #d9c8b2;
+    line-height: 1.7;
+    text-decoration: none;
+  }
+  .footer-col a:hover { color: #f3e3c0; }
+  .footer-divider {
+    width: 80px; height: 1px;
+    background: rgba(184,135,74,0.4);
+    margin: 30px auto;
+  }
+  .legend {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #c9b697;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .legend strong { color: var(--gold); }
+  .allergen {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #a89779;
+    max-width: 600px;
+    margin: 0 auto 26px;
+    line-height: 1.6;
+  }
+  .copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    color: #7a6a52;
+    text-transform: uppercase;
+  }
+
+  /* ================== REVEAL ANIMATION ================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ================== RESPONSIVE ================== */
+  @media (max-width: 720px) {
+    .nav-links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: #1e1915; padding: 0;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .nav-links.open { max-height: 400px; padding: 12px 24px 18px; }
+    .nav-links li { padding: 10px 0; border-bottom: 1px solid rgba(217,200,178,0.08); }
+    .nav-links li:last-child { border-bottom: 0; }
+    .nav-toggle { display: inline-block; }
+    .hero-frame { padding: 40px 22px; }
+    section.menu-section { padding: 64px 20px; }
+    .item-name { font-size: 19px; }
+    .price { font-size: 18px; }
+    .hours-bar .sep { display: block; margin: 6px 0; height: 0; }
+
+    /* Force every grid to a single column on mobile */
+    .grid,
+    .grid.two,
+    .grid.tight,
+    .offers-row,
+    .welcome-grid,
+    .form-row,
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 14px;
+    }
+    .grid { gap: 8px; }
+    .item { padding: 12px 0; }
+    .desc { max-width: 100%; }
+  }
+
+  /* ================== PRINT ================== */
+  @media print {
+    nav, .hero-cta, .nav-toggle { display: none; }
+    body { background: white; color: black; }
+    .hero { min-height: auto; padding: 30px 0; background: white; color: black; }
+    .hero-title, .hero-sub, .hero-eyebrow, .hero-meta { color: black; }
+    .hero-frame { border-color: #999; }
+    section.menu-section { padding: 30px 0; page-break-inside: avoid; }
+    .offer { background: white; }
+    footer { background: white; color: black; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- =================== WELCOME OFFER OVERLAY =================== -->
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-card">
+    <button class="welcome-close" id="welcomeClose" aria-label="Close welcome">×</button>
+    <div class="welcome-eyebrow">Welcome to Craiglands</div>
+    <h2 class="welcome-title" id="welcomeTitle">Exclusive Offers</h2>
+    <p class="welcome-sub">A warm welcome from our Brasserie · Antler Bar &amp; Lounge</p>
+    <div class="welcome-divider"><span class="l"></span><span class="o">✦ ✦</span><span class="l"></span></div>
+
+    <div class="welcome-grid">
+      <div class="promo"><img src="offer%202.png" alt="Craiglands dinner offer"></div>
+      <div class="promo"><img src="offer%201.png" alt="Craiglands afternoon tea offer"></div>
+    </div>
+
+    <div class="welcome-actions">
+      <a href="#booking" class="btn btn-primary welcome-act" data-action="book">Book a Table</a>
+      <button type="button" class="btn btn-ghost welcome-act" data-action="menu">View Our Menu</button>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">CRAIGLANDS</a>
+    <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">MENU</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sandwiches">Sandwiches</a></li>
+      <li><a href="#starters">Starters</a></li>
+      <li><a href="#mains">Mains</a></li>
+      <li><a href="#burgers">Burgers</a></li>
+      <li><a href="#tea">Afternoon Tea</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#booking">Book</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<header class="hero" id="top">
+  <div class="hero-frame">
+    <div class="hero-eyebrow">Est. Ilkley · Yorkshire</div>
+    <h1 class="hero-title">Brasserie</h1>
+    <div class="hero-sub">Antler Bar &amp; Lounge</div>
+    <div class="hero-rule"><span class="l"></span><span class="o">✦ ✦</span><span class="l"></span></div>
+    <div class="hero-meta">All-Day Menu · Crafted with Yorkshire Heart</div>
+    <div class="hero-cta">
+      <a href="#sandwiches" class="btn btn-primary">View Menu</a>
+      <a href="#offers" class="btn btn-ghost">Our Offers</a>
+    </div>
+  </div>
+</header>
+
+<!-- =================== HOURS =================== -->
+<div class="hours-bar">
+  <span>Sandwiches</span> 12:00 — 15:00 (Tue – Sat)
+  <span class="sep">|</span>
+  <span>Main Menu</span> 15:00 — 20:00 (Tue – Sat)
+  <span class="sep">|</span>
+  <span>Afternoon Tea</span> 12:00 — 17:00 (Daily)
+</div>
+
+<!-- =================== SANDWICHES =================== -->
+<section class="menu-section reveal" id="sandwiches">
+  <div class="section-head">
+    <div class="section-eyebrow">Lunchtime Classics</div>
+    <h2 class="section-title">Sandwich Menu</h2>
+    <div class="divider"><span class="l"></span><span class="o">✦</span><span class="l"></span></div>
+    <p class="section-desc">Triple deckers on white or wholemeal, dressed leaves &amp; crisps · £6.99 each, add fries £2.50</p>
+  </div>
+
+  <div class="grid">
+    <div class="item">
+      <div class="item-row"><span class="item-name">Cheese Savoury</span><span class="dots"></span><span class="price">£6.99</span></div>
+      <div class="desc">Cheddar, spring onion &amp; carrot in light mayonnaise <span class="tag">V</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Yorkshire Ham</span><span class="dots"></span><span class="price">£6.99</span></div>
+      <div class="desc">With wholegrain mustard mayonnaise</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Tuna &amp; Red Onion</span><span class="dots"></span><span class="price">£6.99</span></div>
+      <div class="desc">A subtle hint of horseradish</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Egg Mayo &amp; Watercress</span><span class="dots"></span><span class="price">£6.99</span></div>
+      <div class="desc">Classic egg mayo with fresh watercress <span class="tag">V</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Vegan Coronation</span><span class="dots"></span><span class="price">£6.99</span></div>
+      <div class="desc">Cauliflower &amp; chickpea in vegan curry mayo <span class="tag">VE</span></div>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="feature-t">Soup &amp; Sandwich Combo</div>
+    <div class="feature-d">Soup of the day with a sandwich of your choice <span class="tag">GFA</span></div>
+    <div class="feature-p">£9.95</div>
+  </div>
+</section>
+
+<!-- =================== STARTERS =================== -->
+<section class="menu-section alt reveal" id="starters">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow">To Begin</div>
+      <h2 class="section-title">To Start</h2>
+      <div class="divider"><span class="l"></span><span class="o">•</span><span class="l"></span></div>
+      <p class="section-desc">Honest, hearty plates — perfect with a glass of something cold from the bar.</p>
+    </div>
+
+    <div class="grid">
+      <div class="item">
+        <div class="item-row"><span class="item-name">Ham Hock &amp; Pea Terrine</span><span class="dots"></span><span class="price">£8.95</span></div>
+        <div class="desc">Homemade piccalilli, toasted ciabatta <span class="tag">GFA</span></div>
+      </div>
+      <div class="item">
+        <div class="item-row"><span class="item-name">Soup of the Moment</span><span class="dots"></span><span class="price">£7.95</span></div>
+        <div class="desc">Served with fresh bloomer bread <span class="tag">GFA</span></div>
+      </div>
+      <div class="item">
+        <div class="item-row"><span class="item-name">Creamy Garlic Mushrooms</span><span class="dots"></span><span class="price">£7.95</span></div>
+        <div class="desc">On a toasted croute <span class="tag">V</span></div>
+      </div>
+      <div class="item">
+        <div class="item-row"><span class="item-name">Crispy Southern Fried Chicken Strips</span><span class="dots"></span><span class="price">£8.95</span></div>
+        <div class="desc">With sweet chilli dip</div>
+      </div>
+      <div class="item">
+        <div class="item-row"><span class="item-name">Hot Honey Halloumi</span><span class="dots"></span><span class="price">£8.95</span></div>
+        <div class="desc">With chilli &amp; spring onions <span class="tag">GFA</span></div>
+      </div>
+      <div class="item">
+        <div class="item-row"><span class="item-name">Pitta, Olives, Tzatziki &amp; Feta</span><span class="dots"></span><span class="price">£7.95</span></div>
+        <div class="desc">Warm pitta, mixed olives, creamy tzatziki, feta <span class="tag">V</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MAINS =================== -->
+<section class="menu-section reveal" id="mains">
+  <div class="section-head">
+    <div class="section-eyebrow">Served from 15:00</div>
+    <h2 class="section-title">The Main Event</h2>
+    <div class="divider"><span class="l"></span><span class="o">✦</span><span class="l"></span></div>
+    <p class="section-desc">From Yorkshire's best butchers, fishmongers and fields — to your table.</p>
+  </div>
+
+  <div class="grid two">
+    <div class="item">
+      <div class="item-row"><span class="item-name">Cajun Rump Steak</span><span class="dots"></span><span class="price">£22.95</span></div>
+      <div class="desc">Pont Neuf potatoes, grilled tomato &amp; mushrooms <span class="tag">GF</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Battered Haddock</span><span class="dots"></span><span class="price">£18.95</span></div>
+      <div class="desc">Chips, Yorkshire caviar, tartar sauce, lemon <span class="tag">GF</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Chargrilled Salmon Fillet</span><span class="dots"></span><span class="price">£17.95</span></div>
+      <div class="desc">Pont Neuf potatoes, grilled tomato &amp; mushrooms <span class="tag">GF</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Steak Pie</span><span class="dots"></span><span class="price">£18.95</span></div>
+      <div class="desc">Creamy mash, carrots, stem broccoli, beef jus</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pan-Fried Chicken Supreme</span><span class="dots"></span><span class="price">£18.95</span></div>
+      <div class="desc">Mushroom sauce, mash, vegetables <span class="tag">GF</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Chicken or Salmon Caesar Salad</span><span class="dots"></span><span class="price">£16.95</span></div>
+      <div class="desc">Croutons &amp; parmesan <span class="tag">GFA</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Greek-Style Chicken &amp; Feta Salad</span><span class="dots"></span><span class="price">£16.95</span></div>
+      <div class="desc">Olives, crusty bread, tzatziki <span class="tag">GFA</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Homemade Chicken Curry</span><span class="dots"></span><span class="price">£17.95</span></div>
+      <div class="desc">Pilau rice &amp; naan (vegetarian option available)</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Sweet Potato &amp; Butternut Wellington</span><span class="dots"></span><span class="price">£17.95</span></div>
+      <div class="desc">Mash, vegetables, vegan jus <span class="tag">V</span></div>
+    </div>
+  </div>
+
+  <div class="cat-block" style="margin-top: 70px;">
+    <div class="cat-head">
+      <div class="cat-title">Sides</div>
+      <div class="cat-sub">The perfect accompaniments</div>
+    </div>
+    <div class="grid tight">
+      <div class="item"><div class="item-row"><span class="item-name">Beer-Battered Onion Rings</span><span class="dots"></span><span class="price">£5.95</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Chips</span><span class="dots"></span><span class="price">£5.95</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Fries</span><span class="dots"></span><span class="price">£5.95</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Mixed Salad</span><span class="dots"></span><span class="price">£5.95</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Broccoli &amp; Carrots</span><span class="dots"></span><span class="price">£5.95</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Creamy Mash</span><span class="dots"></span><span class="price">£4.95</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BURGERS & BOARDS & DESSERTS =================== -->
+<section class="menu-section alt reveal" id="burgers">
+  <div class="section-inner">
+
+    <div class="cat-block">
+      <div class="section-head">
+        <div class="section-eyebrow">Hand-Pressed</div>
+        <h2 class="section-title">Burgers</h2>
+        <div class="divider"><span class="l"></span><span class="o">✦</span><span class="l"></span></div>
+        <p class="section-desc">Toasted brioche bun, lettuce, tomato, fries &amp; coleslaw</p>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <div class="item-row"><span class="item-name">Craiglands Double Burger</span><span class="dots"></span><span class="price">£17.95</span></div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Double Burger with Cheese &amp; Bacon</span><span class="dots"></span><span class="price">£18.95</span></div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Hawaiian Burger</span><span class="dots"></span><span class="price">£17.95</span></div>
+          <div class="desc">BBQ sauce, pineapple &amp; melted cheese</div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Crispy Vegetable Burger</span><span class="dots"></span><span class="price">£16.95</span></div>
+          <div class="desc">Tangy salsa <span class="tag">V</span></div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Southern Fried Chicken Burger</span><span class="dots"></span><span class="price">£17.95</span></div>
+          <div class="desc">With melted cheese</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="section-head">
+        <div class="section-eyebrow">Made For Sharing</div>
+        <h2 class="section-title">Sharing Boards</h2>
+        <div class="divider"><span class="l"></span><span class="o">✦</span><span class="l"></span></div>
+        <p class="section-desc">For two — best enjoyed slowly with conversation and a chilled bottle.</p>
+      </div>
+      <div class="grid two">
+        <div class="item">
+          <div class="item-row"><span class="item-name">Charcuterie &amp; Cheese Board</span><span class="dots"></span><span class="price">£22.50</span></div>
+          <div class="desc">Salami, prosciutto, brie, smoked Applewood, olives, nuts, breadsticks &amp; chutney</div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Mediterranean Board</span><span class="dots"></span><span class="price">£18.95</span></div>
+          <div class="desc">Falafel, breadsticks, hummus, tzatziki, olives, feta, cherry tomatoes &amp; artichokes <span class="tag">V</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="section-head">
+        <div class="section-eyebrow">Sweet Things</div>
+        <h2 class="section-title">Desserts</h2>
+        <div class="divider"><span class="l"></span><span class="o">✦</span><span class="l"></span></div>
+        <p class="section-desc">A small indulgence to round things off.</p>
+      </div>
+      <div class="grid">
+        <div class="item">
+          <div class="item-row"><span class="item-name">Warm Chocolate Brownie</span><span class="dots"></span><span class="price">£7.95</span></div>
+          <div class="desc">Chocolate ice cream &amp; sauce <span class="tag">GFA</span></div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Strawberry Jam Pudding</span><span class="dots"></span><span class="price">£7.95</span></div>
+          <div class="desc">With crème anglaise</div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Lemon Tart</span><span class="dots"></span><span class="price">£7.95</span></div>
+          <div class="desc">With vanilla ice cream</div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Ice Cream Selection</span><span class="dots"></span><span class="price">£7.95</span></div>
+          <div class="desc">Vanilla, strawberry &amp; chocolate with cream &amp; wafers <span class="tag">GFA</span></div>
+        </div>
+        <div class="item">
+          <div class="item-row"><span class="item-name">Sticky Toffee Pudding</span><span class="dots"></span><span class="price">£7.95</span></div>
+          <div class="desc">Toffee sauce &amp; ice cream <span class="tag">V</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================== AFTERNOON TEA =================== -->
+<section class="menu-section reveal" id="tea">
+  <div class="section-head">
+    <div class="section-eyebrow">Served Daily · 12:00 – 17:00</div>
+    <h2 class="section-title">Afternoon Tea</h2>
+    <div class="divider"><span class="l"></span><span class="o">☕</span><span class="l"></span></div>
+    <p class="section-desc">A timeless Yorkshire ritual — finger sandwiches, warm scones, and a tower of patisserie.</p>
+  </div>
+  <div class="grid two">
+    <div class="item">
+      <div class="item-row"><span class="item-name">Traditional Afternoon Tea</span><span class="dots"></span><span class="price">£24.95</span></div>
+      <div class="desc">Finger sandwiches, warm scones with clotted cream &amp; jam, selection of patisserie</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Cream Tea</span><span class="dots"></span><span class="price">£7.95</span></div>
+      <div class="desc">Freshly baked scone, clotted cream, strawberry jam · served with tea or coffee</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Sparkling Afternoon Tea</span><span class="dots"></span><span class="price">£32.95</span></div>
+      <div class="desc">Traditional afternoon tea with a glass of prosecco <span class="tag">GFA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== OFFERS =================== -->
+<section class="menu-section alt reveal" id="offers">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow">Exclusive at Craiglands</div>
+      <h2 class="section-title">Our Offers</h2>
+      <div class="divider"><span class="l"></span><span class="o">✦ ✦</span><span class="l"></span></div>
+      <p class="section-desc">A little something extra, on us.</p>
+    </div>
+    <div class="offers-row">
+      <div class="offer">
+        <div class="offer-image"><img src="offer%202.png" alt="Craiglands Brasserie offer" loading="lazy"></div>
+        <div class="offer-body">
+          <a href="#booking" class="btn btn-primary" style="border-color: var(--gold-deep);">Book a Table</a>
+        </div>
+      </div>
+      <div class="offer">
+        <div class="offer-image"><img src="offer%201.png" alt="Craiglands Brasserie offer" loading="lazy"></div>
+        <div class="offer-body">
+          <a href="#booking" class="btn btn-primary" style="border-color: var(--gold-deep);">Book Afternoon Tea</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BOOKING =================== -->
+<section class="booking-section reveal" id="booking">
+  <div class="section-head">
+    <div class="section-eyebrow">Reserve Your Table</div>
+    <h2 class="section-title">Book With Us</h2>
+    <div class="divider"><span class="l"></span><span class="o">✦ ✦</span><span class="l"></span></div>
+    <p class="section-desc">Lunch, dinner, or afternoon tea — tell us when, and we'll be ready for you.</p>
+  </div>
+
+  <div class="booking-card">
+    <div class="form-thanks" id="formThanks">
+      Thank you — your reservation request has been sent. <br>
+      A member of our team will confirm by email or telephone shortly.
+    </div>
+
+    <form id="bookingForm"
+          action="https://formsubmit.co/reservations@craiglands.co.uk"
+          method="POST">
+      <!-- FormSubmit configuration (hidden) -->
+      <input type="hidden" name="_subject" value="New Reservation · Craiglands Brasserie">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://craiglands.co.uk/?booking=received">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="Name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone" required autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="form-field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="service">Service</label>
+          <select id="service" name="Service" required>
+            <option value="" disabled selected>— Please choose —</option>
+            <option value="Lunch / Sandwich Menu">Lunch · Sandwich Menu (Tue–Sat 12:00–15:00)</option>
+            <option value="Dinner / Main Menu">Dinner · Main Menu (Tue–Sat 15:00–20:00)</option>
+            <option value="Cream Tea">Cream Tea</option>
+            <option value="Traditional Afternoon Tea">Traditional Afternoon Tea</option>
+            <option value="Sparkling Afternoon Tea">Sparkling Afternoon Tea (with Prosecco)</option>
+            <option value="Dinner Offer (2 courses + complimentary fizz)">Dinner Offer (2 courses + complimentary fizz)</option>
+            <option value="Afternoon Tea Offer (£19.95pp + fizz)">Afternoon Tea Offer (£19.95pp + fizz)</option>
+            <option value="Sharing Boards / Drinks">Sharing Boards / Drinks</option>
+            <option value="Other">Other (please specify in notes)</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="guests">Number of Guests</label>
+          <select id="guests" name="Guests" required>
+            <option value="" disabled selected>— Select —</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9</option><option>10</option>
+            <option value="More than 10">More than 10</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="Date" required>
+        </div>
+        <div class="form-field">
+          <label for="time">Time</label>
+          <input type="time" id="time" name="Time" required step="900">
+        </div>
+      </div>
+
+      <div class="form-row full">
+        <div class="form-field">
+          <label for="notes">Special Requests · Dietary Requirements</label>
+          <textarea id="notes" name="Notes" placeholder="Allergies, accessibility, occasion (birthday, anniversary…), seating preference"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Send Reservation Request</button>
+      </div>
+
+      <p class="form-fallback">
+        Prefer to email directly? Write to
+        <a href="mailto:reservations@craiglands.co.uk">reservations@craiglands.co.uk</a>
+        — or
+        <a href="#" id="mailtoLink">click here to open your mail app pre-filled</a>
+        with the details above.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="footer-brand">Craiglands</div>
+  <div class="footer-sub">Brasserie · Antler Bar &amp; Lounge</div>
+
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Find Us</h4>
+      <p>Cowpasture Road<br>Ilkley<br>LS29 8RQ</p>
+    </div>
+    <div class="footer-col">
+      <h4>Service Hours</h4>
+      <p>Sandwiches &nbsp;12 – 3<br>Mains &nbsp;3 – 8<br>Afternoon Tea &nbsp;12 – 5</p>
+    </div>
+    <div class="footer-col">
+      <h4>Reservations</h4>
+      <p>Please call ahead<br>for parties of four<br>or more</p>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <p class="legend">
+    <strong>V</strong> Vegetarian &nbsp;·&nbsp;
+    <strong>VE</strong> Vegan &nbsp;·&nbsp;
+    <strong>GF</strong> Gluten Free &nbsp;·&nbsp;
+    <strong>GFA</strong> Gluten Free Available
+  </p>
+  <p class="allergen">All dishes are prepared in a kitchen where allergens are present. Please advise your server of any dietary requirements.</p>
+  <p class="copy">© Craiglands Brasserie · Ilkley</p>
+</footer>
+
+<script>
+  // welcome overlay — show once per session, dismiss via close / View Menu / Book
+  (function() {
+    const welcome = document.getElementById('welcome');
+    if (!welcome) return;
+    const SEEN_KEY = 'craiglands_welcome_seen';
+
+    function open() {
+      welcome.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      welcome.classList.remove('show');
+      document.body.style.overflow = '';
+      try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+    }
+
+    if (!sessionStorage.getItem(SEEN_KEY)) {
+      // small delay so the page paints first — feels less jarring
+      setTimeout(open, 600);
+    }
+
+    document.getElementById('welcomeClose').addEventListener('click', close);
+    document.querySelectorAll('.welcome-act').forEach(btn => {
+      btn.addEventListener('click', () => {
+        close();
+        if (btn.dataset.action === 'menu') {
+          // smooth scroll to first menu section
+          setTimeout(() => {
+            document.getElementById('sandwiches')
+              .scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        }
+      });
+    });
+    // click outside the card closes it
+    welcome.addEventListener('click', e => { if (e.target === welcome) close(); });
+    // Esc key closes
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && welcome.classList.contains('show')) close();
+    });
+  })();
+
+  // mobile nav
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.addEventListener('click', e => {
+    if (e.target.tagName === 'A') links.classList.remove('open');
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // booking form — block past dates, build a mailto fallback from current values
+  (function() {
+    const form = document.getElementById('bookingForm');
+    if (!form) return;
+
+    const dateField = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateField.min = today;
+
+    const mailtoLink = document.getElementById('mailtoLink');
+    mailtoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const get = id => (document.getElementById(id).value || '').trim();
+      const lines = [
+        'Reservation Request — Craiglands Brasserie',
+        '',
+        'Name:        ' + (get('name')   || '—'),
+        'Phone:       ' + (get('phone')  || '—'),
+        'Email:       ' + (get('email')  || '—'),
+        'Service:     ' + (get('service')|| '—'),
+        'Guests:      ' + (get('guests') || '—'),
+        'Date:        ' + (get('date')   || '—'),
+        'Time:        ' + (get('time')   || '—'),
+        '',
+        'Special Requests:',
+        get('notes') || '—',
+        '',
+        '—',
+        'Sent from craiglands.co.uk booking form'
+      ].join('\n');
+      const subject = 'Reservation Request — ' + (get('name') || 'New booking');
+      window.location.href =
+        'mailto:reservations@craiglands.co.uk' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body='    + encodeURIComponent(lines);
+    });
+
+    // show the thank-you panel if the user just returned from FormSubmit
+    if (new URLSearchParams(window.location.search).get('booking') === 'received') {
+      document.getElementById('formThanks').classList.add('show');
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+  })();
+</script>
+
+</body>
+</html>
